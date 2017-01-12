@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+  <modification>
+  <name>Обмен данными с МойСклад</name>
+  <code>MySklad</code>
+  <version>1.0</version>
+  <author>Легуша Артур</author>
+  <link>http://www.isyms.ru</link>
+	
+  <file name="admin/model/catalog/attribute.php">
+		<operation>
+			<search position="before" offset="2"><![CDATA[public function editAttribute]]></search>
+			<add><![CDATA[return $attribute_id;]]></add>
+		</operation>
+	</file>
+	
+	<file name="admin/model/catalog/category.php">
+		<operation>
+			<search position="before" offset="2"><![CDATA[public function editCategory]]></search>
+			<add><![CDATA[return $category_id;]]></add>
+		</operation>
+		
+	</file>
+	
+	<file name="admin/model/catalog/manufacturer.php">
+		<operation>
+			<search position="before" offset="2"><![CDATA[public function editManufacturer]]></search>
+			<add><![CDATA[return $manufacturer_id;]]></add>
+		</operation>
+	</file>
+	
+	<file name="admin/model/catalog/product.php">
+		<operation>
+			<search position="before" offset="2"><![CDATA[public function editProduct]]></search>
+			<add><![CDATA[return $product_id;]]></add>
+		</operation>
+	</file>
+
+	<file name="system/library/image.php">
+		<operation>
+			<search position="replace"><![CDATA[$this->image = $this->create($file);]]></search>
+			<add><![CDATA[$this->image = $this->create($file, 'auto');]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[private function create($image) {]]></search>
+			<add><![CDATA[private function create($image, $mime) {
+        if ($mime == 'auto')]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[public function watermark($file, $position = 'bottomright') {]]></search>
+			<add><![CDATA[public function watermark($file, $position = 'bottomright', $mime = 'auto') {]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[$watermark = $this->create($file);]]></search>
+			<add><![CDATA[$watermark = $this->create($file, $mime);]]></add>
+		</operation>
+		<operation info="add 'center' for watermark">
+			<search position="before"><![CDATA[case 'bottomright':]]></search>
+			<add><![CDATA[
+			case 'center':
+				$watermark_pos_x = ($this->info['width'])/3;
+				$watermark_pos_y = ($this->info['height'])/3;
+				break;
+			]]></add>
+		</operation>
+		<operation info="imagecopy to imagecopyresized">
+			<search position="replace"><![CDATA[imagecopy($this->image, $watermark, $watermark_pos_x, $watermark_pos_y, 0, 0, 120, 40);]]></search>
+			<add><![CDATA[
+			$new_watermark_width = $this->info['width'];
+			$new_watermark_height = $this->info['height'];
+			if ($watermark_width > 0) {
+				$new_watermark_width = $this->info['width'];
+				$new_watermark_height = $watermark_height * $this->info['width'] / $watermark_width;
+			}
+			imagecopyresized ($this->image , $watermark, 0, $watermark_pos_y, 0, 0, $new_watermark_width, $new_watermark_height, $watermark_width, $watermark_height);
+			]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[$merge = $this->create($file);]]></search>
+			<add><![CDATA[$merge = $this->create($file, 'auto');]]></add>
+		</operation>
+	</file>
+</modification>

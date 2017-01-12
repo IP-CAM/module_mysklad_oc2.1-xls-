@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="108c5f9d-ea54-4a6a-ba62-c0b34d853a93" name="Default" comment="" />
+    <ignored path="Module_mysklad_oc2.1(xls).iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="Module_mysklad_oc2.1(xls)" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="myskladoc21.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/controller/module/myskladoc21.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-44">
+              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myskladoc21.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/export/myskladoc21.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="195" column="20" selection-start-line="195" selection-start-column="20" selection-end-line="195" selection-end-column="20" />
+              <folding>
+                <element signature="e#48#66#0#PHP" expanded="true" />
+                <marker date="1484143251070" expanded="true" signature="1211:1249" ph="SELECT * FRO... ${DB_PREFIX}" />
+                <marker date="1484143251070" expanded="true" signature="2791:2830" ph="SELECT * FRO... ${DB_PREFIX}" />
+                <marker date="1484143251070" expanded="true" signature="3740:3776" ph="SELECT * FRO... ${DB_PREFIX}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myskladoc21.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/model/tool/myskladoc21.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-5040">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1484139207439" expanded="true" signature="447:554" ph="SELECT order... ${DB_PREFIX}order" />
+                <marker date="1484139207439" expanded="true" signature="598:696" ph="SELECT order... ${DB_PREFIX}order" />
+                <marker date="1484139207439" expanded="true" signature="4413:4520" ph="SELECT order... ${DB_PREFIX}order" />
+                <marker date="1484139207439" expanded="true" signature="4564:4662" ph="SELECT order... ${DB_PREFIX}order" />
+                <marker date="1484139207439" expanded="true" signature="13732:13831" ph="SELECT optio... ${DB_PREFIX}" />
+                <marker date="1484139207439" expanded="true" signature="13969:14044" ph="INSERT INTO `${DB_PREFIX}option`... " />
+                <marker date="1484139207439" expanded="true" signature="14109:14270" ph="INSERT INTO ${DB_PREFIX}option_description... " />
+                <marker date="1484139207439" expanded="true" signature="14448:14593" ph="SELECT optio... ${DB_PREFIX}" />
+                <marker date="1484139207439" expanded="true" signature="14770:14878" ph="INSERT INTO ${DB_PREFIX}option_value... " />
+                <marker date="1484139207439" expanded="true" signature="14949:15159" ph="INSERT INTO ${DB_PREFIX}option_value_description... " />
+                <marker date="1484139207439" expanded="true" signature="18493:18586" ph="SELECT manuf... ${DB_PREFIX}" />
+                <marker date="1484139207439" expanded="true" signature="23324:23429" ph="SELECT * FRO... ${DB_PREFIX}category_to_1c" />
+                <marker date="1484139207439" expanded="true" signature="24242:24384" ph="INSERT INTO `${DB_PREFIX}category_to_1c`... " />
+                <marker date="1484139207439" expanded="true" signature="26291:26386" ph="SELECT attri... ${DB_PREFIX}" />
+                <marker date="1484139207439" expanded="true" signature="26525:26653" ph="INSERT INTO `${DB_PREFIX}attribute_to_1c`... " />
+                <marker date="1484139207439" expanded="true" signature="27099:27357" ph="SELECT DISTI... ${DB_PREFIX}" />
+                <marker date="1484139207439" expanded="true" signature="29229:29315" ph="SELECT * FRO... ${DB_PREFIX}" />
+                <marker date="1484139207439" expanded="true" signature="39361:39506" ph="INSERT INTO `${DB_PREFIX}product_to_1c`... " />
+                <marker date="1484139207439" expanded="true" signature="41344:41440" ph="DELETE FROM " />
+                <marker date="1484139207439" expanded="true" signature="41464:41612" ph="INSERT INTO `${DB_PREFIX}url_alias`... " />
+                <marker date="1484139207439" expanded="true" signature="43168:43265" ph="SELECT produ... ${DB_PREFIX}product" />
+                <marker date="1484139207439" expanded="true" signature="43551:43621" ph="SELECT 1c_id... ${DB_PREFIX}" />
+                <marker date="1484139207439" expanded="true" signature="43911:44002" ph="SELECT produ... ${DB_PREFIX}" />
+                <marker date="1484139207439" expanded="true" signature="44184:44278" ph="SELECT categ... ${DB_PREFIX}category_description" />
+                <marker date="1484139207439" expanded="true" signature="45498:45573" ph="DELETE FROM " />
+                <marker date="1484139207439" expanded="true" signature="45606:45684" ph="SELECT * FRO... ${DB_PREFIX}product_to_category" />
+                <marker date="1484139207439" expanded="true" signature="45936:46085" ph="INSERT INTO `${DB_PREFIX}product_to_category`... " />
+                <marker date="1484139207439" expanded="true" signature="46283:46361" ph="SELECT * FRO... ${DB_PREFIX}category" />
+                <marker date="1484139207439" expanded="true" signature="46749:46829" ph="SELECT `lang... ${DB_PREFIX}language" />
+                <marker date="1484139207439" expanded="true" signature="51762:51833" ph="DELETE FROM " />
+                <marker date="1484139207439" expanded="true" signature="51880:51951" ph="DELETE FROM " />
+                <marker date="1484139207439" expanded="true" signature="53111:53183" ph="DELETE FROM " />
+                <marker date="1484139207439" expanded="true" signature="53230:53302" ph="DELETE FROM " />
+                <marker date="1484139207439" expanded="true" signature="54239:54315" ph="DELETE FROM " />
+                <marker date="1484139207439" expanded="true" signature="54362:54438" ph="DELETE FROM " />
+                <marker date="1484139207439" expanded="true" signature="55800:56067" ph="CREATE TABLE... ${DB_PREFIX}product_to_1c" />
+                <marker date="1484139207439" expanded="true" signature="56275:56566" ph="CREATE TABLE... ${DB_PREFIX}category_to_1c" />
+                <marker date="1484139207439" expanded="true" signature="56775:57074" ph="CREATE TABLE... ${DB_PREFIX}attribute_to_1c" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/export/myskladoc21.php" />
+        <option value="$PROJECT_DIR$/admin/controller/module/myskladoc21.php" />
+        <option value="$PROJECT_DIR$/admin/view/template/module/myskladoc21.tpl" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="24" />
+    <option name="width" value="1366" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module_mysklad_oc2.1(xls)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module_mysklad_oc2.1(xls)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module_mysklad_oc2.1(xls)" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module_mysklad_oc2.1(xls)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module_mysklad_oc2.1(xls)" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="export" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module_mysklad_oc2.1(xls)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module_mysklad_oc2.1(xls)" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module_mysklad_oc2.1(xls)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module_mysklad_oc2.1(xls)" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module_mysklad_oc2.1(xls)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module_mysklad_oc2.1(xls)" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tool" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module_mysklad_oc2.1(xls)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module_mysklad_oc2.1(xls)" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module_mysklad_oc2.1(xls)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module_mysklad_oc2.1(xls)" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="108c5f9d-ea54-4a6a-ba62-c0b34d853a93" name="Default" comment="" />
+      <created>1484137616348</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1484137616348</updated>
+      <workItem from="1484137617943" duration="6480000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="6480000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="24" width="1366" height="744" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17349927" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/admin/controller/extension/module/myskladoc23.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/template/module/myskladoc21.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding>
+            <marker date="1484181123895" expanded="true" signature="5858:5876" ph="..." />
+            <marker date="1484181123895" expanded="true" signature="7745:7770" ph="..." />
+            <marker date="1484181123895" expanded="true" signature="7896:7960" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install.ocmod.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="43" column="48" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/controller/module/myskladoc21.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-44">
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export/myskladoc21.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="195" column="20" selection-start-line="195" selection-start-column="20" selection-end-line="195" selection-end-column="20" />
+          <folding>
+            <element signature="e#48#66#0#PHP" expanded="true" />
+            <marker date="1484143251070" expanded="true" signature="1211:1249" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1484143251070" expanded="true" signature="2791:2830" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1484143251070" expanded="true" signature="3740:3776" ph="SELECT * FRO... ${DB_PREFIX}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/tool/myskladoc21.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5040">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1484139207439" expanded="true" signature="447:554" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484139207439" expanded="true" signature="598:696" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484139207439" expanded="true" signature="4413:4520" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484139207439" expanded="true" signature="4564:4662" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484139207439" expanded="true" signature="13732:13831" ph="SELECT optio... ${DB_PREFIX}" />
+            <marker date="1484139207439" expanded="true" signature="13969:14044" ph="INSERT INTO `${DB_PREFIX}option`... " />
+            <marker date="1484139207439" expanded="true" signature="14109:14270" ph="INSERT INTO ${DB_PREFIX}option_description... " />
+            <marker date="1484139207439" expanded="true" signature="14448:14593" ph="SELECT optio... ${DB_PREFIX}" />
+            <marker date="1484139207439" expanded="true" signature="14770:14878" ph="INSERT INTO ${DB_PREFIX}option_value... " />
+            <marker date="1484139207439" expanded="true" signature="14949:15159" ph="INSERT INTO ${DB_PREFIX}option_value_description... " />
+            <marker date="1484139207439" expanded="true" signature="18493:18586" ph="SELECT manuf... ${DB_PREFIX}" />
+            <marker date="1484139207439" expanded="true" signature="23324:23429" ph="SELECT * FRO... ${DB_PREFIX}category_to_1c" />
+            <marker date="1484139207439" expanded="true" signature="24242:24384" ph="INSERT INTO `${DB_PREFIX}category_to_1c`... " />
+            <marker date="1484139207439" expanded="true" signature="26291:26386" ph="SELECT attri... ${DB_PREFIX}" />
+            <marker date="1484139207439" expanded="true" signature="26525:26653" ph="INSERT INTO `${DB_PREFIX}attribute_to_1c`... " />
+            <marker date="1484139207439" expanded="true" signature="27099:27357" ph="SELECT DISTI... ${DB_PREFIX}" />
+            <marker date="1484139207439" expanded="true" signature="29229:29315" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1484139207439" expanded="true" signature="39361:39506" ph="INSERT INTO `${DB_PREFIX}product_to_1c`... " />
+            <marker date="1484139207439" expanded="true" signature="41344:41440" ph="DELETE FROM " />
+            <marker date="1484139207439" expanded="true" signature="41464:41612" ph="INSERT INTO `${DB_PREFIX}url_alias`... " />
+            <marker date="1484139207439" expanded="true" signature="43168:43265" ph="SELECT produ... ${DB_PREFIX}product" />
+            <marker date="1484139207439" expanded="true" signature="43551:43621" ph="SELECT 1c_id... ${DB_PREFIX}" />
+            <marker date="1484139207439" expanded="true" signature="43911:44002" ph="SELECT produ... ${DB_PREFIX}" />
+            <marker date="1484139207439" expanded="true" signature="44184:44278" ph="SELECT categ... ${DB_PREFIX}category_description" />
+            <marker date="1484139207439" expanded="true" signature="45498:45573" ph="DELETE FROM " />
+            <marker date="1484139207439" expanded="true" signature="45606:45684" ph="SELECT * FRO... ${DB_PREFIX}product_to_category" />
+            <marker date="1484139207439" expanded="true" signature="45936:46085" ph="INSERT INTO `${DB_PREFIX}product_to_category`... " />
+            <marker date="1484139207439" expanded="true" signature="46283:46361" ph="SELECT * FRO... ${DB_PREFIX}category" />
+            <marker date="1484139207439" expanded="true" signature="46749:46829" ph="SELECT `lang... ${DB_PREFIX}language" />
+            <marker date="1484139207439" expanded="true" signature="51762:51833" ph="DELETE FROM " />
+            <marker date="1484139207439" expanded="true" signature="51880:51951" ph="DELETE FROM " />
+            <marker date="1484139207439" expanded="true" signature="53111:53183" ph="DELETE FROM " />
+            <marker date="1484139207439" expanded="true" signature="53230:53302" ph="DELETE FROM " />
+            <marker date="1484139207439" expanded="true" signature="54239:54315" ph="DELETE FROM " />
+            <marker date="1484139207439" expanded="true" signature="54362:54438" ph="DELETE FROM " />
+            <marker date="1484139207439" expanded="true" signature="55800:56067" ph="CREATE TABLE... ${DB_PREFIX}product_to_1c" />
+            <marker date="1484139207439" expanded="true" signature="56275:56566" ph="CREATE TABLE... ${DB_PREFIX}category_to_1c" />
+            <marker date="1484139207439" expanded="true" signature="56775:57074" ph="CREATE TABLE... ${DB_PREFIX}attribute_to_1c" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
