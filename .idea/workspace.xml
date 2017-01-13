@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="108c5f9d-ea54-4a6a-ba62-c0b34d853a93" name="Default" comment="" />
+    <list default="true" id="108c5f9d-ea54-4a6a-ba62-c0b34d853a93" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OLD/admin/controller/module/myskladoc21.php" afterPath="$PROJECT_DIR$/OLD/admin/controller/module/myskladoc21.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OLD/admin/model/tool/myskladoc21.php" afterPath="$PROJECT_DIR$/OLD/admin/model/tool/myskladoc21.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OLD/admin/view/template/module/myskladoc21.tpl" afterPath="$PROJECT_DIR$/OLD/admin/view/template/module/myskladoc21.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OLD/export/myskladoc21.php" afterPath="$PROJECT_DIR$/OLD/export/myskladoc21.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/controller/module/myskladoc21.php" afterPath="$PROJECT_DIR$/admin/controller/module/myskladoc21.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/model/tool/myskladoc21.php" afterPath="$PROJECT_DIR$/admin/model/tool/myskladoc21.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/export/myskladoc21.php" afterPath="$PROJECT_DIR$/export/myskladoc21.php" />
+    </list>
     <ignored path="Module_mysklad_oc2.1(xls).iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -20,89 +30,76 @@
     <favorites_list name="Module_mysklad_oc2.1(xls)" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="myskladoc21.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/controller/module/myskladoc21.php">
+        <entry file="file://$PROJECT_DIR$/admin/model/tool/myskladoc21.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-44">
-              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="myskladoc21.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/export/myskladoc21.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="195" column="20" selection-start-line="195" selection-start-column="20" selection-end-line="195" selection-end-column="20" />
+            <state relative-caret-position="15">
+              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding>
-                <element signature="e#48#66#0#PHP" expanded="true" />
-                <marker date="1484143251070" expanded="true" signature="1211:1249" ph="SELECT * FRO... ${DB_PREFIX}" />
-                <marker date="1484143251070" expanded="true" signature="2791:2830" ph="SELECT * FRO... ${DB_PREFIX}" />
-                <marker date="1484143251070" expanded="true" signature="3740:3776" ph="SELECT * FRO... ${DB_PREFIX}" />
+                <marker date="1484269510498" expanded="true" signature="501:608" ph="SELECT order... ${DB_PREFIX}order" />
+                <marker date="1484269510498" expanded="true" signature="667:765" ph="SELECT order... ${DB_PREFIX}order" />
+                <marker date="1484269510498" expanded="true" signature="5691:5798" ph="SELECT order... ${DB_PREFIX}order" />
+                <marker date="1484269510498" expanded="true" signature="5857:5955" ph="SELECT order... ${DB_PREFIX}order" />
+                <marker date="1484269510498" expanded="true" signature="18595:18694" ph="SELECT optio... ${DB_PREFIX}" />
+                <marker date="1484269510498" expanded="true" signature="18871:18946" ph="INSERT INTO `${DB_PREFIX}option`... " />
+                <marker date="1484269510498" expanded="true" signature="19029:19190" ph="INSERT INTO ${DB_PREFIX}option_description... " />
+                <marker date="1484269510498" expanded="true" signature="19398:19543" ph="SELECT optio... ${DB_PREFIX}" />
+                <marker date="1484269510498" expanded="true" signature="19765:19873" ph="INSERT INTO ${DB_PREFIX}option_value... " />
+                <marker date="1484269510498" expanded="true" signature="19962:20172" ph="INSERT INTO ${DB_PREFIX}option_value_description... " />
+                <marker date="1484269510498" expanded="true" signature="22870:22975" ph="SELECT * FRO... ${DB_PREFIX}category_to_1c" />
+                <marker date="1484269510498" expanded="true" signature="23959:24101" ph="INSERT INTO `${DB_PREFIX}category_to_1c`... " />
+                <marker date="1484269510498" expanded="true" signature="24896:25154" ph="SELECT DISTI... ${DB_PREFIX}" />
+                <marker date="1484269510498" expanded="true" signature="27287:27373" ph="SELECT * FRO... ${DB_PREFIX}" />
+                <marker date="1484269510498" expanded="true" signature="27699:27795" ph="DELETE FROM " />
+                <marker date="1484269510498" expanded="true" signature="27825:27973" ph="INSERT INTO `${DB_PREFIX}url_alias`... " />
+                <marker date="1484269510498" expanded="true" signature="29631:29728" ph="SELECT produ... ${DB_PREFIX}product" />
+                <marker date="1484269510498" expanded="true" signature="30304:30379" ph="DELETE FROM " />
+                <marker date="1484269510498" expanded="true" signature="30418:30496" ph="SELECT * FRO... ${DB_PREFIX}product_to_category" />
+                <marker date="1484269510498" expanded="true" signature="30820:30969" ph="INSERT INTO `${DB_PREFIX}product_to_category`... " />
+                <marker date="1484269510498" expanded="true" signature="31239:31317" ph="SELECT * FRO... ${DB_PREFIX}category" />
+                <marker date="1484269510498" expanded="true" signature="31771:31851" ph="SELECT `lang... ${DB_PREFIX}language" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="myskladoc21.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin/model/tool/myskladoc21.php">
+        <entry file="file://$PROJECT_DIR$/export/myskladoc21.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5040">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="1290">
+              <caret line="193" column="53" selection-start-line="193" selection-start-column="53" selection-end-line="193" selection-end-column="68" />
               <folding>
-                <marker date="1484139207439" expanded="true" signature="447:554" ph="SELECT order... ${DB_PREFIX}order" />
-                <marker date="1484139207439" expanded="true" signature="598:696" ph="SELECT order... ${DB_PREFIX}order" />
-                <marker date="1484139207439" expanded="true" signature="4413:4520" ph="SELECT order... ${DB_PREFIX}order" />
-                <marker date="1484139207439" expanded="true" signature="4564:4662" ph="SELECT order... ${DB_PREFIX}order" />
-                <marker date="1484139207439" expanded="true" signature="13732:13831" ph="SELECT optio... ${DB_PREFIX}" />
-                <marker date="1484139207439" expanded="true" signature="13969:14044" ph="INSERT INTO `${DB_PREFIX}option`... " />
-                <marker date="1484139207439" expanded="true" signature="14109:14270" ph="INSERT INTO ${DB_PREFIX}option_description... " />
-                <marker date="1484139207439" expanded="true" signature="14448:14593" ph="SELECT optio... ${DB_PREFIX}" />
-                <marker date="1484139207439" expanded="true" signature="14770:14878" ph="INSERT INTO ${DB_PREFIX}option_value... " />
-                <marker date="1484139207439" expanded="true" signature="14949:15159" ph="INSERT INTO ${DB_PREFIX}option_value_description... " />
-                <marker date="1484139207439" expanded="true" signature="18493:18586" ph="SELECT manuf... ${DB_PREFIX}" />
-                <marker date="1484139207439" expanded="true" signature="23324:23429" ph="SELECT * FRO... ${DB_PREFIX}category_to_1c" />
-                <marker date="1484139207439" expanded="true" signature="24242:24384" ph="INSERT INTO `${DB_PREFIX}category_to_1c`... " />
-                <marker date="1484139207439" expanded="true" signature="26291:26386" ph="SELECT attri... ${DB_PREFIX}" />
-                <marker date="1484139207439" expanded="true" signature="26525:26653" ph="INSERT INTO `${DB_PREFIX}attribute_to_1c`... " />
-                <marker date="1484139207439" expanded="true" signature="27099:27357" ph="SELECT DISTI... ${DB_PREFIX}" />
-                <marker date="1484139207439" expanded="true" signature="29229:29315" ph="SELECT * FRO... ${DB_PREFIX}" />
-                <marker date="1484139207439" expanded="true" signature="39361:39506" ph="INSERT INTO `${DB_PREFIX}product_to_1c`... " />
-                <marker date="1484139207439" expanded="true" signature="41344:41440" ph="DELETE FROM " />
-                <marker date="1484139207439" expanded="true" signature="41464:41612" ph="INSERT INTO `${DB_PREFIX}url_alias`... " />
-                <marker date="1484139207439" expanded="true" signature="43168:43265" ph="SELECT produ... ${DB_PREFIX}product" />
-                <marker date="1484139207439" expanded="true" signature="43551:43621" ph="SELECT 1c_id... ${DB_PREFIX}" />
-                <marker date="1484139207439" expanded="true" signature="43911:44002" ph="SELECT produ... ${DB_PREFIX}" />
-                <marker date="1484139207439" expanded="true" signature="44184:44278" ph="SELECT categ... ${DB_PREFIX}category_description" />
-                <marker date="1484139207439" expanded="true" signature="45498:45573" ph="DELETE FROM " />
-                <marker date="1484139207439" expanded="true" signature="45606:45684" ph="SELECT * FRO... ${DB_PREFIX}product_to_category" />
-                <marker date="1484139207439" expanded="true" signature="45936:46085" ph="INSERT INTO `${DB_PREFIX}product_to_category`... " />
-                <marker date="1484139207439" expanded="true" signature="46283:46361" ph="SELECT * FRO... ${DB_PREFIX}category" />
-                <marker date="1484139207439" expanded="true" signature="46749:46829" ph="SELECT `lang... ${DB_PREFIX}language" />
-                <marker date="1484139207439" expanded="true" signature="51762:51833" ph="DELETE FROM " />
-                <marker date="1484139207439" expanded="true" signature="51880:51951" ph="DELETE FROM " />
-                <marker date="1484139207439" expanded="true" signature="53111:53183" ph="DELETE FROM " />
-                <marker date="1484139207439" expanded="true" signature="53230:53302" ph="DELETE FROM " />
-                <marker date="1484139207439" expanded="true" signature="54239:54315" ph="DELETE FROM " />
-                <marker date="1484139207439" expanded="true" signature="54362:54438" ph="DELETE FROM " />
-                <marker date="1484139207439" expanded="true" signature="55800:56067" ph="CREATE TABLE... ${DB_PREFIX}product_to_1c" />
-                <marker date="1484139207439" expanded="true" signature="56275:56566" ph="CREATE TABLE... ${DB_PREFIX}category_to_1c" />
-                <marker date="1484139207439" expanded="true" signature="56775:57074" ph="CREATE TABLE... ${DB_PREFIX}attribute_to_1c" />
+                <marker date="1484229267178" expanded="true" signature="1140:1178" ph="SELECT * FRO... ${DB_PREFIX}" />
+                <marker date="1484229267178" expanded="true" signature="2720:2759" ph="SELECT * FRO... ${DB_PREFIX}" />
+                <marker date="1484229267178" expanded="true" signature="3669:3705" ph="SELECT * FRO... ${DB_PREFIX}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myskladoc21.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/controller/module/myskladoc21.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="89">
+              <caret line="291" column="29" selection-start-line="291" selection-start-column="29" selection-end-line="291" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/admin/view/template/module/myskladoc21.tpl" />
         <option value="$PROJECT_DIR$/export/myskladoc21.php" />
         <option value="$PROJECT_DIR$/admin/controller/module/myskladoc21.php" />
-        <option value="$PROJECT_DIR$/admin/view/template/module/myskladoc21.tpl" />
+        <option value="$PROJECT_DIR$/admin/model/tool/myskladoc21.php" />
       </list>
     </option>
   </component>
@@ -143,6 +140,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -255,6 +253,36 @@
               <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="language" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module_mysklad_oc2.1(xls)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module_mysklad_oc2.1(xls)" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="language" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="english" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -280,7 +308,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -306,6 +333,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -340,32 +373,35 @@
       <option name="presentableId" value="Default" />
       <updated>1484137616348</updated>
       <workItem from="1484137617943" duration="6480000" />
+      <workItem from="1484225843426" duration="3730000" />
+      <workItem from="1484230434085" duration="6490000" />
+      <workItem from="1484249292949" duration="13518000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6480000" />
+    <option name="totallyTimeSpent" value="30218000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17349927" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.121522695" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -382,11 +418,44 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/controller/extension/module/myskladoc23.php">
+    <entry file="file://$PROJECT_DIR$/admin/model/tool/myskladoc21.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1484269510498" expanded="true" signature="501:608" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484269510498" expanded="true" signature="667:765" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484269510498" expanded="true" signature="5691:5798" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484269510498" expanded="true" signature="5857:5955" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484269510498" expanded="true" signature="18595:18694" ph="SELECT optio... ${DB_PREFIX}" />
+            <marker date="1484269510498" expanded="true" signature="18871:18946" ph="INSERT INTO `${DB_PREFIX}option`... " />
+            <marker date="1484269510498" expanded="true" signature="19029:19190" ph="INSERT INTO ${DB_PREFIX}option_description... " />
+            <marker date="1484269510498" expanded="true" signature="19398:19543" ph="SELECT optio... ${DB_PREFIX}" />
+            <marker date="1484269510498" expanded="true" signature="19765:19873" ph="INSERT INTO ${DB_PREFIX}option_value... " />
+            <marker date="1484269510498" expanded="true" signature="19962:20172" ph="INSERT INTO ${DB_PREFIX}option_value_description... " />
+            <marker date="1484269510498" expanded="true" signature="22870:22975" ph="SELECT * FRO... ${DB_PREFIX}category_to_1c" />
+            <marker date="1484269510498" expanded="true" signature="23959:24101" ph="INSERT INTO `${DB_PREFIX}category_to_1c`... " />
+            <marker date="1484269510498" expanded="true" signature="24896:25154" ph="SELECT DISTI... ${DB_PREFIX}" />
+            <marker date="1484269510498" expanded="true" signature="27287:27373" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1484269510498" expanded="true" signature="27699:27795" ph="DELETE FROM " />
+            <marker date="1484269510498" expanded="true" signature="27825:27973" ph="INSERT INTO `${DB_PREFIX}url_alias`... " />
+            <marker date="1484269510498" expanded="true" signature="29631:29728" ph="SELECT produ... ${DB_PREFIX}product" />
+            <marker date="1484269510498" expanded="true" signature="30304:30379" ph="DELETE FROM " />
+            <marker date="1484269510498" expanded="true" signature="30418:30496" ph="SELECT * FRO... ${DB_PREFIX}product_to_category" />
+            <marker date="1484269510498" expanded="true" signature="30820:30969" ph="INSERT INTO `${DB_PREFIX}product_to_category`... " />
+            <marker date="1484269510498" expanded="true" signature="31239:31317" ph="SELECT * FRO... ${DB_PREFIX}category" />
+            <marker date="1484269510498" expanded="true" signature="31771:31851" ph="SELECT `lang... ${DB_PREFIX}language" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/controller/module/myskladoc21.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -394,18 +463,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/view/template/module/myskladoc21.tpl">
+    <entry file="file://$PROJECT_DIR$/admin/controller/module/myskladoc21.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+        <state relative-caret-position="825">
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export/myskladoc21.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2925">
+          <caret line="195" column="20" selection-start-line="195" selection-start-column="20" selection-end-line="195" selection-end-column="20" />
           <folding>
-            <marker date="1484181123895" expanded="true" signature="5858:5876" ph="..." />
-            <marker date="1484181123895" expanded="true" signature="7745:7770" ph="..." />
-            <marker date="1484181123895" expanded="true" signature="7896:7960" ph="..." />
+            <marker date="1484229267178" expanded="true" signature="1140:1178" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1484229267178" expanded="true" signature="2720:2759" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1484229267178" expanded="true" signature="3669:3705" ph="SELECT * FRO... ${DB_PREFIX}" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/tool/myskladoc21.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1484269510498" expanded="true" signature="501:608" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484269510498" expanded="true" signature="667:765" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484269510498" expanded="true" signature="5691:5798" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484269510498" expanded="true" signature="5857:5955" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484269510498" expanded="true" signature="18595:18694" ph="SELECT optio... ${DB_PREFIX}" />
+            <marker date="1484269510498" expanded="true" signature="18871:18946" ph="INSERT INTO `${DB_PREFIX}option`... " />
+            <marker date="1484269510498" expanded="true" signature="19029:19190" ph="INSERT INTO ${DB_PREFIX}option_description... " />
+            <marker date="1484269510498" expanded="true" signature="19398:19543" ph="SELECT optio... ${DB_PREFIX}" />
+            <marker date="1484269510498" expanded="true" signature="19765:19873" ph="INSERT INTO ${DB_PREFIX}option_value... " />
+            <marker date="1484269510498" expanded="true" signature="19962:20172" ph="INSERT INTO ${DB_PREFIX}option_value_description... " />
+            <marker date="1484269510498" expanded="true" signature="22870:22975" ph="SELECT * FRO... ${DB_PREFIX}category_to_1c" />
+            <marker date="1484269510498" expanded="true" signature="23959:24101" ph="INSERT INTO `${DB_PREFIX}category_to_1c`... " />
+            <marker date="1484269510498" expanded="true" signature="24896:25154" ph="SELECT DISTI... ${DB_PREFIX}" />
+            <marker date="1484269510498" expanded="true" signature="27287:27373" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1484269510498" expanded="true" signature="27699:27795" ph="DELETE FROM " />
+            <marker date="1484269510498" expanded="true" signature="27825:27973" ph="INSERT INTO `${DB_PREFIX}url_alias`... " />
+            <marker date="1484269510498" expanded="true" signature="29631:29728" ph="SELECT produ... ${DB_PREFIX}product" />
+            <marker date="1484269510498" expanded="true" signature="30304:30379" ph="DELETE FROM " />
+            <marker date="1484269510498" expanded="true" signature="30418:30496" ph="SELECT * FRO... ${DB_PREFIX}product_to_category" />
+            <marker date="1484269510498" expanded="true" signature="30820:30969" ph="INSERT INTO `${DB_PREFIX}product_to_category`... " />
+            <marker date="1484269510498" expanded="true" signature="31239:31317" ph="SELECT * FRO... ${DB_PREFIX}category" />
+            <marker date="1484269510498" expanded="true" signature="31771:31851" ph="SELECT `lang... ${DB_PREFIX}language" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/controller/extension/module/myskladoc23.php" />
     <entry file="file://$PROJECT_DIR$/install.ocmod.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
@@ -414,70 +523,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/controller/module/myskladoc21.php">
+    <entry file="file://$PROJECT_DIR$/admin/view/template/module/myskladoc21.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-44">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        <state relative-caret-position="406">
+          <caret line="165" column="44" selection-start-line="165" selection-start-column="44" selection-end-line="165" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/language/english/module/myskladoc21.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/export/myskladoc21.php">
+    <entry file="file://$PROJECT_DIR$/admin/controller/module/myskladoc21.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="195" column="20" selection-start-line="195" selection-start-column="20" selection-end-line="195" selection-end-column="20" />
-          <folding>
-            <element signature="e#48#66#0#PHP" expanded="true" />
-            <marker date="1484143251070" expanded="true" signature="1211:1249" ph="SELECT * FRO... ${DB_PREFIX}" />
-            <marker date="1484143251070" expanded="true" signature="2791:2830" ph="SELECT * FRO... ${DB_PREFIX}" />
-            <marker date="1484143251070" expanded="true" signature="3740:3776" ph="SELECT * FRO... ${DB_PREFIX}" />
-          </folding>
+        <state relative-caret-position="89">
+          <caret line="291" column="29" selection-start-line="291" selection-start-column="29" selection-end-line="291" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/model/tool/myskladoc21.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5040">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="15">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding>
-            <marker date="1484139207439" expanded="true" signature="447:554" ph="SELECT order... ${DB_PREFIX}order" />
-            <marker date="1484139207439" expanded="true" signature="598:696" ph="SELECT order... ${DB_PREFIX}order" />
-            <marker date="1484139207439" expanded="true" signature="4413:4520" ph="SELECT order... ${DB_PREFIX}order" />
-            <marker date="1484139207439" expanded="true" signature="4564:4662" ph="SELECT order... ${DB_PREFIX}order" />
-            <marker date="1484139207439" expanded="true" signature="13732:13831" ph="SELECT optio... ${DB_PREFIX}" />
-            <marker date="1484139207439" expanded="true" signature="13969:14044" ph="INSERT INTO `${DB_PREFIX}option`... " />
-            <marker date="1484139207439" expanded="true" signature="14109:14270" ph="INSERT INTO ${DB_PREFIX}option_description... " />
-            <marker date="1484139207439" expanded="true" signature="14448:14593" ph="SELECT optio... ${DB_PREFIX}" />
-            <marker date="1484139207439" expanded="true" signature="14770:14878" ph="INSERT INTO ${DB_PREFIX}option_value... " />
-            <marker date="1484139207439" expanded="true" signature="14949:15159" ph="INSERT INTO ${DB_PREFIX}option_value_description... " />
-            <marker date="1484139207439" expanded="true" signature="18493:18586" ph="SELECT manuf... ${DB_PREFIX}" />
-            <marker date="1484139207439" expanded="true" signature="23324:23429" ph="SELECT * FRO... ${DB_PREFIX}category_to_1c" />
-            <marker date="1484139207439" expanded="true" signature="24242:24384" ph="INSERT INTO `${DB_PREFIX}category_to_1c`... " />
-            <marker date="1484139207439" expanded="true" signature="26291:26386" ph="SELECT attri... ${DB_PREFIX}" />
-            <marker date="1484139207439" expanded="true" signature="26525:26653" ph="INSERT INTO `${DB_PREFIX}attribute_to_1c`... " />
-            <marker date="1484139207439" expanded="true" signature="27099:27357" ph="SELECT DISTI... ${DB_PREFIX}" />
-            <marker date="1484139207439" expanded="true" signature="29229:29315" ph="SELECT * FRO... ${DB_PREFIX}" />
-            <marker date="1484139207439" expanded="true" signature="39361:39506" ph="INSERT INTO `${DB_PREFIX}product_to_1c`... " />
-            <marker date="1484139207439" expanded="true" signature="41344:41440" ph="DELETE FROM " />
-            <marker date="1484139207439" expanded="true" signature="41464:41612" ph="INSERT INTO `${DB_PREFIX}url_alias`... " />
-            <marker date="1484139207439" expanded="true" signature="43168:43265" ph="SELECT produ... ${DB_PREFIX}product" />
-            <marker date="1484139207439" expanded="true" signature="43551:43621" ph="SELECT 1c_id... ${DB_PREFIX}" />
-            <marker date="1484139207439" expanded="true" signature="43911:44002" ph="SELECT produ... ${DB_PREFIX}" />
-            <marker date="1484139207439" expanded="true" signature="44184:44278" ph="SELECT categ... ${DB_PREFIX}category_description" />
-            <marker date="1484139207439" expanded="true" signature="45498:45573" ph="DELETE FROM " />
-            <marker date="1484139207439" expanded="true" signature="45606:45684" ph="SELECT * FRO... ${DB_PREFIX}product_to_category" />
-            <marker date="1484139207439" expanded="true" signature="45936:46085" ph="INSERT INTO `${DB_PREFIX}product_to_category`... " />
-            <marker date="1484139207439" expanded="true" signature="46283:46361" ph="SELECT * FRO... ${DB_PREFIX}category" />
-            <marker date="1484139207439" expanded="true" signature="46749:46829" ph="SELECT `lang... ${DB_PREFIX}language" />
-            <marker date="1484139207439" expanded="true" signature="51762:51833" ph="DELETE FROM " />
-            <marker date="1484139207439" expanded="true" signature="51880:51951" ph="DELETE FROM " />
-            <marker date="1484139207439" expanded="true" signature="53111:53183" ph="DELETE FROM " />
-            <marker date="1484139207439" expanded="true" signature="53230:53302" ph="DELETE FROM " />
-            <marker date="1484139207439" expanded="true" signature="54239:54315" ph="DELETE FROM " />
-            <marker date="1484139207439" expanded="true" signature="54362:54438" ph="DELETE FROM " />
-            <marker date="1484139207439" expanded="true" signature="55800:56067" ph="CREATE TABLE... ${DB_PREFIX}product_to_1c" />
-            <marker date="1484139207439" expanded="true" signature="56275:56566" ph="CREATE TABLE... ${DB_PREFIX}category_to_1c" />
-            <marker date="1484139207439" expanded="true" signature="56775:57074" ph="CREATE TABLE... ${DB_PREFIX}attribute_to_1c" />
+            <marker date="1484269510498" expanded="true" signature="501:608" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484269510498" expanded="true" signature="667:765" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484269510498" expanded="true" signature="5691:5798" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484269510498" expanded="true" signature="5857:5955" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484269510498" expanded="true" signature="18595:18694" ph="SELECT optio... ${DB_PREFIX}" />
+            <marker date="1484269510498" expanded="true" signature="18871:18946" ph="INSERT INTO `${DB_PREFIX}option`... " />
+            <marker date="1484269510498" expanded="true" signature="19029:19190" ph="INSERT INTO ${DB_PREFIX}option_description... " />
+            <marker date="1484269510498" expanded="true" signature="19398:19543" ph="SELECT optio... ${DB_PREFIX}" />
+            <marker date="1484269510498" expanded="true" signature="19765:19873" ph="INSERT INTO ${DB_PREFIX}option_value... " />
+            <marker date="1484269510498" expanded="true" signature="19962:20172" ph="INSERT INTO ${DB_PREFIX}option_value_description... " />
+            <marker date="1484269510498" expanded="true" signature="22870:22975" ph="SELECT * FRO... ${DB_PREFIX}category_to_1c" />
+            <marker date="1484269510498" expanded="true" signature="23959:24101" ph="INSERT INTO `${DB_PREFIX}category_to_1c`... " />
+            <marker date="1484269510498" expanded="true" signature="24896:25154" ph="SELECT DISTI... ${DB_PREFIX}" />
+            <marker date="1484269510498" expanded="true" signature="27287:27373" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1484269510498" expanded="true" signature="27699:27795" ph="DELETE FROM " />
+            <marker date="1484269510498" expanded="true" signature="27825:27973" ph="INSERT INTO `${DB_PREFIX}url_alias`... " />
+            <marker date="1484269510498" expanded="true" signature="29631:29728" ph="SELECT produ... ${DB_PREFIX}product" />
+            <marker date="1484269510498" expanded="true" signature="30304:30379" ph="DELETE FROM " />
+            <marker date="1484269510498" expanded="true" signature="30418:30496" ph="SELECT * FRO... ${DB_PREFIX}product_to_category" />
+            <marker date="1484269510498" expanded="true" signature="30820:30969" ph="INSERT INTO `${DB_PREFIX}product_to_category`... " />
+            <marker date="1484269510498" expanded="true" signature="31239:31317" ph="SELECT * FRO... ${DB_PREFIX}category" />
+            <marker date="1484269510498" expanded="true" signature="31771:31851" ph="SELECT `lang... ${DB_PREFIX}language" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export/myskladoc21.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1290">
+          <caret line="193" column="53" selection-start-line="193" selection-start-column="53" selection-end-line="193" selection-end-column="68" />
+          <folding>
+            <marker date="1484229267178" expanded="true" signature="1140:1178" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1484229267178" expanded="true" signature="2720:2759" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1484229267178" expanded="true" signature="3669:3705" ph="SELECT * FRO... ${DB_PREFIX}" />
           </folding>
         </state>
       </provider>

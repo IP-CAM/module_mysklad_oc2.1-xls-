@@ -1,13 +1,6 @@
 <?php
 // Version
 define('VERSION', '2.3.0.2');
-
-use Cart\Currency;
-use Cart\Weight;
-use Cart\User;
-use Cart\Length;
-
-
 // Configuration
 require_once('../admin/config.php');
 

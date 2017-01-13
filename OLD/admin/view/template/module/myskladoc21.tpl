@@ -62,132 +62,12 @@ error_reporting(E_ALL ^E_NOTICE);
                   </select></td>
               </tr>
 
-              <tr>
-                <td><?php echo $entry_allow_ip; ?></td>
-                <td>
-                  <textarea name="myskladoc21_allow_ip" style="width: 200px; height: 50px;"><?php echo $myskladoc21_allow_ip; ?></textarea>
-                </td>
-              </tr>
             </table>
           </div>
 
           <div id="tab-product">
 
-            <table id="myskladoc21_price_type_id" class="list" style="width: auto">
-              <thead>
-              <tr>
-                <td class="left"><?php echo $entry_config_price_type; ?></td>
-                <td class="left"><?php echo $entry_customer_group; ?></td>
-                <td class="right"><?php echo $entry_quantity; ?></td>
-                <td class="right"><?php echo $entry_priority; ?></td>
-                <td></td>
-              </tr>
-              </thead>
-              <tbody>
-              <?php $price_row = 0; ?>
-              <?php foreach ($myskladoc21_price_type as $obj) { ?>
-              <?php if ($price_row == 0) {?>
-              <tr id="myskladoc21_price_type_row<?php echo $price_row; ?>">
-              <td class="left"><input type="text" name="myskladoc21_price_type[<?php echo $price_row; ?>][keyword]" value="<?php echo $obj['keyword']; ?>" /></td>
-              <td class="left"><?php  echo $text_price_default; ?><input type="hidden" name="myskladoc21_price_type[<?php echo $price_row; ?>][customer_group_id]" value="0" /></td>
-              <td class="center">-<input type="hidden" name="myskladoc21_price_type[<?php echo $price_row; ?>][quantity]" value="0" /></td>
-              <td class="center">-<input type="hidden" name="myskladoc21_price_type[<?php echo $price_row; ?>][priority]" value="0" /></td>
-              <td class="left">&nbsp;</td>
-              </tr>
-              <?php } else { ?>
-              <tr id="myskladoc21_price_type_row<?php echo $price_row; ?>">
-                <td class="left"><input type="text" name="myskladoc21_price_type[<?php echo $price_row; ?>][keyword]" value="<?php echo $obj['keyword']; ?>" /></td>
-                <td class="left"><select name="myskladoc21_price_type[<?php echo $price_row; ?>][customer_group_id]">
-                    <?php foreach ($customer_groups as $customer_group) { ?>
-                    <?php if ($customer_group['customer_group_id'] == $obj['customer_group_id']) { ?>
-                    <option value="<?php echo $customer_group['customer_group_id']; ?>" selected="selected"><?php echo $customer_group['name']; ?></option>
-                    <?php } else { ?>
-                    <option value="<?php echo $customer_group['customer_group_id']; ?>"><?php echo $customer_group['name']; ?></option>
-                    <?php } ?>
-                    <?php } ?>
-                  </select></td>
-                <td class="center"><input type="text" name="myskladoc21_price_type[<?php echo $price_row; ?>][quantity]" value="<?php echo $obj['quantity']; ?>" size="2" /></td>
-                <td class="center"><input type="text" name="myskladoc21_price_type[<?php echo $price_row; ?>][priority]" value="<?php echo $obj['priority']; ?>" size="2" /></td>
-                <td class="center"><a onclick="$('#myskladoc21_price_type_row<?php echo $price_row; ?>').remove();" class="button"><?php echo $button_remove; ?></a></td>
-              </tr>
-              <?php } ?>
-              <?php $price_row++; ?>
-              <?php } ?>
-              </tbody>
-              <tfoot>
-              <tr>
-                <td colspan="4"></td>
-                <td class="left"><a onclick="addConfigPriceType();" class="button"><?php echo $button_insert; ?></a></td>
-              </tr>
-              </tfoot>
-            </table>
 
-            <table class="form">
-              <tr>
-                <td><label for="myskladoc21_flush_product"><?php echo $entry_flush_product; ?></label></td>
-                <td>
-                  <input type="checkbox" value="1" id="myskladoc21_flush_product" name="myskladoc21_flush_product" <?php echo ($myskladoc21_flush_product == 1)? 'checked' : ''; ?>>
-                </td>
-              </tr>
-
-              <tr>
-                <td><label for="myskladoc21_flush_category"><?php echo $entry_flush_category; ?></label></td>
-                <td>
-                  <input type="checkbox" value="1" id="myskladoc21_flush_category" name="myskladoc21_flush_category" <?php echo ($myskladoc21_flush_category == 1)? 'checked' : ''; ?>>
-                </td>
-              </tr>
-
-              <tr>
-                <td><label for="myskladoc21_flush_manufacturer"><?php echo $entry_flush_manufacturer; ?></label></td>
-                <td>
-                  <input type="checkbox" value="1" id="myskladoc21_flush_manufacturer" name="myskladoc21_flush_manufacturer" <?php echo ($myskladoc21_flush_manufacturer == 1)? 'checked' : ''; ?>>
-                </td>
-              </tr>
-
-              <tr>
-                <td><label for="myskladoc21_flush_attribute"><?php echo $entry_flush_attribute; ?></label></td>
-                <td>
-                  <input type="checkbox" value="1" id="myskladoc21_flush_attribute" name="myskladoc21_flush_attribute" <?php echo ($myskladoc21_flush_attribute == 1)? 'checked' : ''; ?>>
-                </td>
-              </tr>
-
-              <tr>
-                <td><label for="myskladoc21_flush_quantity"><?php echo $entry_flush_quantity; ?></label></td>
-                <td>
-                  <input type="checkbox" value="1" id="myskladoc21_flush_quantity" name="myskladoc21_flush_quantity" <?php echo ($myskladoc21_flush_quantity == 1)? 'checked' : ''; ?>>
-                </td>
-              </tr>
-
-              <tr>
-                <td><label for="myskladoc21_fill_parent_cats"><?php echo $entry_fill_parent_cats; ?></label></td>
-                <td>
-                  <input type="checkbox" value="1" id="myskladoc21_fill_parent_cats" name="myskladoc21_fill_parent_cats" <?php echo ($myskladoc21_fill_parent_cats == 1)? 'checked' : ''; ?>>
-                </td>
-              </tr>
-
-              <tr>
-                <td><label for="myskladoc21_seo_url"><?php echo $entry_seo_url; ?></label></td>
-                <td>
-                  <input type="checkbox" value="1" id="myskladoc21_seo_url" name="myskladoc21_seo_url" <?php echo ($myskladoc21_seo_url == 1)? 'checked' : ''; ?>>
-                </td>
-              </tr>
-
-              <tr>
-                <td><label for="myskladoc21_relatedoptions"><?php echo $entry_relatedoptions; ?></label></td>
-                <td>
-                  <input type="checkbox" value="1" id="myskladoc21_relatedoptions" name="myskladoc21_relatedoptions" <?php echo ($myskladoc21_relatedoptions == 1)? 'checked' : ''; ?>>
-                  <span class="help"><?php echo $entry_relatedoptions_help; ?></span>
-                </td>
-              </tr>
-
-              <tr>
-                <td><label for="myskladoc21_full_log"><?php echo $entry_full_log; ?></label></td>
-                <td>
-                  <input type="checkbox" value="1" id="myskladoc21_full_log" name="myskladoc21_full_log" <?php echo ($myskladoc21_full_log == 1)? 'checked' : ''; ?>>
-                </td>
-              </tr>
-
-            </table>
           </div>
 
           <div id="tab-order">
@@ -222,15 +102,7 @@ error_reporting(E_ALL ^E_NOTICE);
                   <input type="text" name="myskladoc21_order_currency" value="<?php echo $myskladoc21_order_currency; ?>">
                 </td>
               </tr>
-
-              <tr>
-                <td><label for="myskladoc21_order_notify"><?php echo $entry_order_notify; ?></label></td>
-                <td>
-                  <input type="checkbox" value="1" id="myskladoc21_order_notify" name="myskladoc21_order_notify" <?php echo ($myskladoc21_order_notify == 1)? 'checked' : ''; ?>>
-                </td>
-              </tr>
-
-            </table>
+   </table>
           </div>
 
           <div id="tab-manual">
