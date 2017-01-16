@@ -78,7 +78,7 @@ class ModelToolmyskladoc21 extends Model {
                 foreach ($products as $product) {
 
                     $document['Документ' . $document_counter]['Товары']['Товар' . $product_counter] = array(
-                        'Ид'             => $this->product_uuid($product['product_id'])
+                        'Ид'             => $this->get_uuid($product['product_id'])
                     ,'Наименование'   => $product['name']
                     ,'ЦенаЗаЕдиницу'  => $product['price']
                     ,'Количество'     => $product['quantity']
@@ -191,7 +191,7 @@ class ModelToolmyskladoc21 extends Model {
     }
 
 
-     /**
+    /**
      * Получает language_id из code (ru, en, etc)
      * Как ни странно, подходящей функции в API не нашлось
      *
@@ -207,19 +207,26 @@ class ModelToolmyskladoc21 extends Model {
     // заносим в базу uuid  для каждого купленого товара (Может в будушем когданибудь  понадобится для API)
     public function product_uuid($product_id)
     {
-
         $uuid = $this->uuid();
-        $query = $this->db->query('SELECT product_id, uuid_id FROM `uuid` WHERE product_id = " '.$product_id.' " ');
 
-        #TODO из-за isset не могу занести данные и нужно что бы в документе к каждому товару тот же ид присваивался а нетолько к 3 это все за Undefined index
-        if (isset($query->row['product_id'])  && $query->row['product_id'] != $product_id) {
-            $this->db->query("INSERT INTO `uuid` SET  product_id = '" .$product_id. "', uuid_id = '" .$uuid. "' ");
+        if ($product_id){
+            $this->db->query('INSERT INTO `uuid` SET product_id = ' . (int)$product_id . ', `uuid_id` = "' . $uuid . '"');
+
             return $uuid;
-        }elseif($query->row['product_id'] == $product_id){
+        }
+    }
+
+    //получаем uuid  код для отправки товара
+    public function get_uuid($product_id){
+        $query = $this->db->query('SELECT uuid_id FROM `uuid` WHERE product_id = " '.$product_id.' " ');
+
+        if ($query->num_rows) {
             return $query->row['uuid_id'];
         }
+        else {
+            return $this->product_uuid($product_id);
 
-
+        }
     }
 
     //создаем метод по генерации uuid
@@ -240,6 +247,91 @@ class ModelToolmyskladoc21 extends Model {
         $clock_seq_hi_and_reserved = $clock_seq_hi_and_reserved | 0x8000;
 
         return sprintf('%08s-%04s-%04x-%04x-%012s', $time_low, $time_mid, $time_hi_and_version, $clock_seq_hi_and_reserved, $node);
+    }
+
+    /*Формируем xls прайс со всем товаром для скачивания*/
+    function downloadxls()
+    {
+        $cwd = getcwd();
+        chdir( DIR_SYSTEM.'myskladoc21_xls' );
+        // Подключаем класс для работы с excel
+        require_once('PHPExcel/PHPExcel.php');
+        // Подключаем класс для вывода данных в формате excel
+        require_once('PHPExcel/PHPExcel/Writer/Excel5.php');
+        chdir( $cwd );
+
+        $query = $this->db->query("SELECT oc2_product.product_id, oc2_product.quantity, oc2_product.price,
+                                  oc2_product_description.name,  oc2_product_description.description   FROM `" . DB_PREFIX . "product` INNER JOIN 
+                                     `" . DB_PREFIX . "product_description` ON oc2_product.product_id = oc2_product_description.product_id 
+                                    ");
+
+        // Создаем объект класса PHPExcel
+        $xls = new PHPExcel();
+        //Открываем файл-шаблон
+        $objReader = PHPExcel_IOFactory::createReader('Excel5');
+        $xls = $objReader->load(DIR_SYSTEM.'myskladoc21_xls/PHPExcel/goods.xls');
+        // Устанавливаем индекс активного листа
+        $xls->setActiveSheetIndex(0);
+        // Получаем активный лист
+        $sheet = $xls->getActiveSheet();
+        // Подписываем лист
+        $sheet->setTitle('Экспорт товара');
+
+        if($query->num_rows){
+
+            $i = 0;
+            /*Создаем цыкл до последнего ид товара и заполняем данными xls*/
+            foreach ($query->rows as $product){
+
+                $index = 1+(++$i);
+
+                // (id_Product)
+                $sheet->setCellValue('B' . $index, $product['product_id']);
+                $sheet->getStyle('B' . $index)->getFill()->setFillType(
+                    PHPExcel_Style_Border::BORDER_THIN);
+                $sheet->getStyle('B' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
+
+                // (Наименование)
+                $sheet->setCellValue('C' . $index, $product['name']);
+                $sheet->getStyle('C' . $index)->getFill()->setFillType(
+                    PHPExcel_Style_Border::BORDER_THIN);
+                $sheet->getStyle('C' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
+
+                // (Цена продажи)
+                $sheet->setCellValue('G' .$index, $product['price']);
+                $sheet->getStyle('G' . $index)->getFill()->setFillType(
+                    PHPExcel_Style_Border::BORDER_THIN);
+                $sheet->getStyle('G' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
+
+                // (Описание)
+                $sheet->setCellValue('O' . $index, $product['description']);
+                $sheet->getStyle('O' . $index)->getFill()->setFillType(
+                    PHPExcel_Style_Border::BORDER_THIN);
+                $sheet->getStyle('O' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
+
+                // (Описание)
+                $sheet->setCellValue('T' . $index, $product['quantity']);
+                $sheet->getStyle('T' . $index)->getFill()->setFillType(
+                    PHPExcel_Style_Border::BORDER_THIN);
+                $sheet->getStyle('T' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
+            }
+        }
+
+
+        /*Сохраняем данные в файл (путь/файл) и скачиваем*/
+        $objWriter = new PHPExcel_Writer_Excel5($xls);
+        $data = date("d.m.Y");
+        $objWriter->save(DIR_SYSTEM.'myskladoc21_xls/otchet/export.xls');
+
+        /*переименовываем файл по дате для скачивания*/
+        $new_name = rename(DIR_SYSTEM.'myskladoc21_xls/otchet/export.xls', DIR_SYSTEM."myskladoc21_xls/otchet/export($data).xls");
+
+        /*передаем с помощью GET запроса на скрипт для скачивания отчета*/
+        if($new_name == true){
+            echo "model/tool/downoload_script_otchet/downoload.php?file=".DIR_SYSTEM."myskladoc21_xls/otchet/export($data).xls";
+        }
+
+
     }
 
 

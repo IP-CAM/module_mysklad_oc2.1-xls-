@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="108c5f9d-ea54-4a6a-ba62-c0b34d853a93" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/install.ocmod.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/install.ocmod.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OLD/admin/controller/module/myskladoc21.php" afterPath="$PROJECT_DIR$/OLD/admin/controller/module/myskladoc21.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OLD/admin/model/tool/myskladoc21.php" afterPath="$PROJECT_DIR$/OLD/admin/model/tool/myskladoc21.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/controller/module/myskladoc21.php" afterPath="$PROJECT_DIR$/admin/controller/module/myskladoc21.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/language/english/module/myskladoc21.php" afterPath="$PROJECT_DIR$/admin/language/english/module/myskladoc21.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/language/ru-ru/module/myskladoc21.php" afterPath="$PROJECT_DIR$/admin/language/ru-ru/module/myskladoc21.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/language/russian/module/myskladoc21.php" afterPath="$PROJECT_DIR$/admin/language/russian/module/myskladoc21.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/model/tool/myskladoc21.php" afterPath="$PROJECT_DIR$/admin/model/tool/myskladoc21.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/view/template/module/myskladoc21.tpl" afterPath="$PROJECT_DIR$/admin/view/template/module/myskladoc21.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/export/myskladoc21.php" afterPath="$PROJECT_DIR$/export/myskladoc21.php" />
     </list>
     <ignored path="Module_mysklad_oc2.1(xls).iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,38 +32,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="myskladoc21.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="myskladoc21.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/model/tool/myskladoc21.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="213" column="157" selection-start-line="213" selection-start-column="157" selection-end-line="213" selection-end-column="157" />
+            <state relative-caret-position="272">
+              <caret line="268" column="27" selection-start-line="268" selection-start-column="27" selection-end-line="268" selection-end-column="27" />
               <folding>
-                <marker date="1484443586737" expanded="true" signature="501:608" ph="SELECT order... ${DB_PREFIX}order" />
-                <marker date="1484443586737" expanded="true" signature="667:765" ph="SELECT order... ${DB_PREFIX}order" />
-                <marker date="1484443586737" expanded="true" signature="5609:5716" ph="SELECT order... ${DB_PREFIX}order" />
-                <marker date="1484443586737" expanded="true" signature="5775:5873" ph="SELECT order... ${DB_PREFIX}order" />
-                <marker date="1484443586737" expanded="true" signature="8749:8829" ph="SELECT `lang... ${DB_PREFIX}language" />
-                <marker date="1484443586737" expanded="true" signature="9111:9168" ph="SELECT produ... uuid" />
-                <marker date="1484443586737" expanded="true" signature="9111:9169" ph="SELECT produ... uuid" />
-                <marker date="1484443586737" expanded="true" signature="9111:9187" ph="SELECT produ... uuid" />
-                <marker date="1484443586737" expanded="true" signature="9111:9188" ph="SELECT produ... uuid" />
-                <marker date="1484443586737" expanded="true" signature="9111:9191" ph="SELECT produ... uuid" />
-                <marker date="1484443586737" expanded="true" signature="9475:9556" ph="INSERT INTO `uuid`... " />
+                <marker date="1484540126999" expanded="true" signature="501:608" ph="SELECT order... ${DB_PREFIX}order" />
+                <marker date="1484540126999" expanded="true" signature="667:765" ph="SELECT order... ${DB_PREFIX}order" />
+                <marker date="1484540126999" expanded="true" signature="5605:5712" ph="SELECT order... ${DB_PREFIX}order" />
+                <marker date="1484540126999" expanded="true" signature="5771:5869" ph="SELECT order... ${DB_PREFIX}order" />
+                <marker date="1484540126999" expanded="true" signature="8744:8824" ph="SELECT `lang... ${DB_PREFIX}language" />
+                <marker date="1484540126999" expanded="true" signature="9127:9216" ph="INSERT INTO `uuid`... " />
+                <marker date="1484540126999" expanded="true" signature="9387:9452" ph="SELECT uuid_... uuid" />
+                <marker date="1484540126999" expanded="true" signature="11047:11404" ph="SELECT oc2_p... ${DB_PREFIX}product" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myskladoc21.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/export/myskladoc21.php">
+      <file leaf-file-name="myskladoc21.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/controller/module/myskladoc21.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="200" column="8" selection-start-line="200" selection-start-column="8" selection-end-line="200" selection-end-column="8" />
-              <folding>
-                <marker date="1484229267178" expanded="true" signature="1140:1178" ph="SELECT * FRO... ${DB_PREFIX}" />
-                <marker date="1484229267178" expanded="true" signature="2720:2759" ph="SELECT * FRO... ${DB_PREFIX}" />
-                <marker date="1484229267178" expanded="true" signature="3669:3705" ph="SELECT * FRO... ${DB_PREFIX}" />
-              </folding>
+            <state relative-caret-position="150">
+              <caret line="196" column="10" selection-start-line="196" selection-start-column="10" selection-end-line="196" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myskladoc21.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/view/template/module/myskladoc21.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="134" column="6" selection-start-line="134" selection-start-column="6" selection-end-line="134" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -71,10 +79,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/admin/view/template/module/myskladoc21.tpl" />
         <option value="$PROJECT_DIR$/export/myskladoc21.php" />
-        <option value="$PROJECT_DIR$/admin/controller/module/myskladoc21.php" />
+        <option value="$PROJECT_DIR$/admin/view/template/module/myskladoc21_xls/myskladoc21_xls.php" />
+        <option value="$PROJECT_DIR$/admin/language/english/module/myskladoc21.php" />
+        <option value="$PROJECT_DIR$/admin/language/ru-ru/module/myskladoc21.php" />
+        <option value="$PROJECT_DIR$/admin/language/russian/module/myskladoc21.php" />
+        <option value="$PROJECT_DIR$/admin/model/tool/myskladoc21_xls/myskladoc21_xls.php" />
+        <option value="$PROJECT_DIR$/admin/view/template/module/myskladoc21.tpl" />
         <option value="$PROJECT_DIR$/admin/model/tool/myskladoc21.php" />
+        <option value="$PROJECT_DIR$/admin/controller/module/myskladoc21.php" />
       </list>
     </option>
   </component>
@@ -116,6 +129,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -131,6 +145,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Module_mysklad_oc2.1(xls)" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module_mysklad_oc2.1(xls)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module_mysklad_oc2.1(xls)" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="system" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myskladoc21_xls" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -227,36 +259,6 @@
               <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="language" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Module_mysklad_oc2.1(xls)" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Module_mysklad_oc2.1(xls)" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="language" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="english" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -282,7 +284,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -352,18 +353,19 @@
       <workItem from="1484230434085" duration="6490000" />
       <workItem from="1484249292949" duration="13518000" />
       <workItem from="1484397341964" duration="26968000" />
+      <workItem from="1484478941728" duration="36349000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57186000" />
+    <option name="totallyTimeSpent" value="93535000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.121522695" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21229868" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -405,17 +407,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1484443586737" expanded="true" signature="501:608" ph="SELECT order... ${DB_PREFIX}order" />
-            <marker date="1484443586737" expanded="true" signature="667:765" ph="SELECT order... ${DB_PREFIX}order" />
-            <marker date="1484443586737" expanded="true" signature="5609:5716" ph="SELECT order... ${DB_PREFIX}order" />
-            <marker date="1484443586737" expanded="true" signature="5775:5873" ph="SELECT order... ${DB_PREFIX}order" />
-            <marker date="1484443586737" expanded="true" signature="8749:8829" ph="SELECT `lang... ${DB_PREFIX}language" />
-            <marker date="1484443586737" expanded="true" signature="9111:9168" ph="SELECT produ... uuid" />
-            <marker date="1484443586737" expanded="true" signature="9111:9169" ph="SELECT produ... uuid" />
-            <marker date="1484443586737" expanded="true" signature="9111:9187" ph="SELECT produ... uuid" />
-            <marker date="1484443586737" expanded="true" signature="9111:9188" ph="SELECT produ... uuid" />
-            <marker date="1484443586737" expanded="true" signature="9111:9191" ph="SELECT produ... uuid" />
-            <marker date="1484443586737" expanded="true" signature="9475:9556" ph="INSERT INTO `uuid`... " />
+            <marker date="1484540126999" expanded="true" signature="501:608" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484540126999" expanded="true" signature="667:765" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484540126999" expanded="true" signature="5605:5712" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484540126999" expanded="true" signature="5771:5869" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484540126999" expanded="true" signature="8744:8824" ph="SELECT `lang... ${DB_PREFIX}language" />
+            <marker date="1484540126999" expanded="true" signature="9127:9216" ph="INSERT INTO `uuid`... " />
+            <marker date="1484540126999" expanded="true" signature="9387:9452" ph="SELECT uuid_... uuid" />
+            <marker date="1484540126999" expanded="true" signature="11047:11404" ph="SELECT oc2_p... ${DB_PREFIX}product" />
           </folding>
         </state>
       </provider>
@@ -425,17 +424,31 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1484443586737" expanded="true" signature="501:608" ph="SELECT order... ${DB_PREFIX}order" />
-            <marker date="1484443586737" expanded="true" signature="667:765" ph="SELECT order... ${DB_PREFIX}order" />
-            <marker date="1484443586737" expanded="true" signature="5609:5716" ph="SELECT order... ${DB_PREFIX}order" />
-            <marker date="1484443586737" expanded="true" signature="5775:5873" ph="SELECT order... ${DB_PREFIX}order" />
-            <marker date="1484443586737" expanded="true" signature="8749:8829" ph="SELECT `lang... ${DB_PREFIX}language" />
-            <marker date="1484443586737" expanded="true" signature="9111:9168" ph="SELECT produ... uuid" />
-            <marker date="1484443586737" expanded="true" signature="9111:9169" ph="SELECT produ... uuid" />
-            <marker date="1484443586737" expanded="true" signature="9111:9187" ph="SELECT produ... uuid" />
-            <marker date="1484443586737" expanded="true" signature="9111:9188" ph="SELECT produ... uuid" />
-            <marker date="1484443586737" expanded="true" signature="9111:9191" ph="SELECT produ... uuid" />
-            <marker date="1484443586737" expanded="true" signature="9475:9556" ph="INSERT INTO `uuid`... " />
+            <marker date="1484540126999" expanded="true" signature="501:608" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484540126999" expanded="true" signature="667:765" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484540126999" expanded="true" signature="5605:5712" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484540126999" expanded="true" signature="5771:5869" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484540126999" expanded="true" signature="8744:8824" ph="SELECT `lang... ${DB_PREFIX}language" />
+            <marker date="1484540126999" expanded="true" signature="9127:9216" ph="INSERT INTO `uuid`... " />
+            <marker date="1484540126999" expanded="true" signature="9387:9452" ph="SELECT uuid_... uuid" />
+            <marker date="1484540126999" expanded="true" signature="11047:11404" ph="SELECT oc2_p... ${DB_PREFIX}product" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/tool/myskladoc21.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1484540126999" expanded="true" signature="501:608" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484540126999" expanded="true" signature="667:765" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484540126999" expanded="true" signature="5605:5712" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484540126999" expanded="true" signature="5771:5869" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484540126999" expanded="true" signature="8744:8824" ph="SELECT `lang... ${DB_PREFIX}language" />
+            <marker date="1484540126999" expanded="true" signature="9127:9216" ph="INSERT INTO `uuid`... " />
+            <marker date="1484540126999" expanded="true" signature="9387:9452" ph="SELECT uuid_... uuid" />
+            <marker date="1484540126999" expanded="true" signature="11047:11404" ph="SELECT oc2_p... ${DB_PREFIX}product" />
           </folding>
         </state>
       </provider>
@@ -461,9 +474,9 @@
         <state relative-caret-position="2925">
           <caret line="195" column="20" selection-start-line="195" selection-start-column="20" selection-end-line="195" selection-end-column="20" />
           <folding>
-            <marker date="1484229267178" expanded="true" signature="1140:1178" ph="SELECT * FRO... ${DB_PREFIX}" />
-            <marker date="1484229267178" expanded="true" signature="2720:2759" ph="SELECT * FRO... ${DB_PREFIX}" />
-            <marker date="1484229267178" expanded="true" signature="3669:3705" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1484494672921" expanded="true" signature="1140:1178" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1484494672921" expanded="true" signature="2718:2757" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1484494672921" expanded="true" signature="3667:3703" ph="SELECT * FRO... ${DB_PREFIX}" />
           </folding>
         </state>
       </provider>
@@ -473,53 +486,20 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1484443586737" expanded="true" signature="501:608" ph="SELECT order... ${DB_PREFIX}order" />
-            <marker date="1484443586737" expanded="true" signature="667:765" ph="SELECT order... ${DB_PREFIX}order" />
-            <marker date="1484443586737" expanded="true" signature="5609:5716" ph="SELECT order... ${DB_PREFIX}order" />
-            <marker date="1484443586737" expanded="true" signature="5775:5873" ph="SELECT order... ${DB_PREFIX}order" />
-            <marker date="1484443586737" expanded="true" signature="8749:8829" ph="SELECT `lang... ${DB_PREFIX}language" />
-            <marker date="1484443586737" expanded="true" signature="9111:9168" ph="SELECT produ... uuid" />
-            <marker date="1484443586737" expanded="true" signature="9111:9169" ph="SELECT produ... uuid" />
-            <marker date="1484443586737" expanded="true" signature="9111:9187" ph="SELECT produ... uuid" />
-            <marker date="1484443586737" expanded="true" signature="9111:9188" ph="SELECT produ... uuid" />
-            <marker date="1484443586737" expanded="true" signature="9111:9191" ph="SELECT produ... uuid" />
-            <marker date="1484443586737" expanded="true" signature="9475:9556" ph="INSERT INTO `uuid`... " />
+            <marker date="1484540126999" expanded="true" signature="501:608" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484540126999" expanded="true" signature="667:765" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484540126999" expanded="true" signature="5605:5712" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484540126999" expanded="true" signature="5771:5869" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484540126999" expanded="true" signature="8744:8824" ph="SELECT `lang... ${DB_PREFIX}language" />
+            <marker date="1484540126999" expanded="true" signature="9127:9216" ph="INSERT INTO `uuid`... " />
+            <marker date="1484540126999" expanded="true" signature="9387:9452" ph="SELECT uuid_... uuid" />
+            <marker date="1484540126999" expanded="true" signature="11047:11404" ph="SELECT oc2_p... ${DB_PREFIX}product" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/controller/extension/module/myskladoc23.php" />
-    <entry file="file://$PROJECT_DIR$/install.ocmod.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="43" column="48" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/view/template/module/myskladoc21.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="165" column="44" selection-start-line="165" selection-start-column="44" selection-end-line="165" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/language/english/module/myskladoc21.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/controller/module/myskladoc21.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="106" column="112" selection-start-line="106" selection-start-column="112" selection-end-line="106" selection-end-column="112" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/install.ocmod.xml" />
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_4.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -528,34 +508,127 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/model/tool/myskladoc21.php">
+    <entry file="file://$PROJECT_DIR$/export/myskladoc21.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="213" column="157" selection-start-line="213" selection-start-column="157" selection-end-line="213" selection-end-column="157" />
+        <state relative-caret-position="525">
+          <caret line="191" column="0" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
           <folding>
-            <marker date="1484443586737" expanded="true" signature="501:608" ph="SELECT order... ${DB_PREFIX}order" />
-            <marker date="1484443586737" expanded="true" signature="667:765" ph="SELECT order... ${DB_PREFIX}order" />
-            <marker date="1484443586737" expanded="true" signature="5609:5716" ph="SELECT order... ${DB_PREFIX}order" />
-            <marker date="1484443586737" expanded="true" signature="5775:5873" ph="SELECT order... ${DB_PREFIX}order" />
-            <marker date="1484443586737" expanded="true" signature="8749:8829" ph="SELECT `lang... ${DB_PREFIX}language" />
-            <marker date="1484443586737" expanded="true" signature="9111:9168" ph="SELECT produ... uuid" />
-            <marker date="1484443586737" expanded="true" signature="9111:9169" ph="SELECT produ... uuid" />
-            <marker date="1484443586737" expanded="true" signature="9111:9187" ph="SELECT produ... uuid" />
-            <marker date="1484443586737" expanded="true" signature="9111:9188" ph="SELECT produ... uuid" />
-            <marker date="1484443586737" expanded="true" signature="9111:9191" ph="SELECT produ... uuid" />
-            <marker date="1484443586737" expanded="true" signature="9475:9556" ph="INSERT INTO `uuid`... " />
+            <marker date="1484494672921" expanded="true" signature="1140:1178" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1484494672921" expanded="true" signature="2718:2757" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1484494672921" expanded="true" signature="3667:3703" ph="SELECT * FRO... ${DB_PREFIX}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/export/myskladoc21.php">
+    <entry file="file://$PROJECT_DIR$/admin/view/template/module/myskladoc21_xls/PHPExcel/PHPExcel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="200" column="8" selection-start-line="200" selection-start-column="8" selection-end-line="200" selection-end-column="8" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/template/module/myskladoc21_xls/PHPExcel/PHPExcel/Writer/Excel5.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/template/module/myskladoc21_xls/myskladoc21_xls.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/language/ru-ru/module/myskladoc21.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="59" column="18" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/language/english/module/myskladoc21.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="57" column="18" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/language/russian/module/myskladoc21.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="59" column="18" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/tool/myskladoc21_xls/downoload_script_otchet/downoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-165">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/tool/myskladoc21_xls/myskladoc21_xls.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/myskladoc21_xls/PHPExcel/PHPExcel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-405">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/myskladoc21_xls/downoload_script_otchet/downoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-165">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/controller/module/myskladoc21.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="196" column="10" selection-start-line="196" selection-start-column="10" selection-end-line="196" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/template/module/myskladoc21.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="134" column="6" selection-start-line="134" selection-start-column="6" selection-end-line="134" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/tool/myskladoc21.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="268" column="27" selection-start-line="268" selection-start-column="27" selection-end-line="268" selection-end-column="27" />
           <folding>
-            <marker date="1484229267178" expanded="true" signature="1140:1178" ph="SELECT * FRO... ${DB_PREFIX}" />
-            <marker date="1484229267178" expanded="true" signature="2720:2759" ph="SELECT * FRO... ${DB_PREFIX}" />
-            <marker date="1484229267178" expanded="true" signature="3669:3705" ph="SELECT * FRO... ${DB_PREFIX}" />
+            <marker date="1484540126999" expanded="true" signature="501:608" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484540126999" expanded="true" signature="667:765" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484540126999" expanded="true" signature="5605:5712" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484540126999" expanded="true" signature="5771:5869" ph="SELECT order... ${DB_PREFIX}order" />
+            <marker date="1484540126999" expanded="true" signature="8744:8824" ph="SELECT `lang... ${DB_PREFIX}language" />
+            <marker date="1484540126999" expanded="true" signature="9127:9216" ph="INSERT INTO `uuid`... " />
+            <marker date="1484540126999" expanded="true" signature="9387:9452" ph="SELECT uuid_... uuid" />
+            <marker date="1484540126999" expanded="true" signature="11047:11404" ph="SELECT oc2_p... ${DB_PREFIX}product" />
           </folding>
         </state>
       </provider>

@@ -45,7 +45,7 @@ foreach ($query->rows as $setting) {
 		$config->set($setting['key'], $setting['value']);
 	} else {
 		$config->set($setting['key'], json_decode($setting['value']));
-		
+
 	}
 }
 
@@ -156,30 +156,7 @@ $controller = new Front($registry);
 
 
 // Router
-if (isset($request->get['mode']) && $request->get['type'] == 'catalog') {
-
-	switch ($request->get['mode']) {
-		case 'checkauth':
-			$action = new Action('module/myskladoc21/modeCheckauth');
-			break;
-
-		case 'init':
-			$action = new Action('module/myskladoc21/modeCatalogInit');
-			break;
-
-		case 'file':
-			$action = new Action('module/myskladoc21/modeFile');
-			break;
-
-		case 'import':
-			$action = new Action('module/myskladoc21/modeImport');
-			break;
-
-		default:
-			echo "success\n";
-	}
-
-} else if (isset($request->get['mode']) && $request->get['type'] == 'sale') {
+if (isset($request->get['mode']) && $request->get['type'] == 'sale') {
 
 	switch ($request->get['mode']) {
 		case 'checkauth':

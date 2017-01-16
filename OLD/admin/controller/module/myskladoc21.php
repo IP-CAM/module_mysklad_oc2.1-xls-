@@ -95,10 +95,6 @@ class Controllermodulemyskladoc21 extends Controller {
             'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], true)
         );
 
-        $data['breadcrumbs'][] = array(
-            'text' => $this->language->get('text_extension'),
-            'href' => $this->url->link('extension/extension', 'token=' . $this->session->data['token'] . '&type=module', true)
-        );
 
         $data['breadcrumbs'][] = array(
             'text' => $this->language->get('heading_title'),
@@ -108,7 +104,7 @@ class Controllermodulemyskladoc21 extends Controller {
 
         $data['action'] = $this->url->link('module/myskladoc21', 'token=' . $this->session->data['token'], true);
 
-        $data['cancel'] = $this->url->link('extension/extension', 'token=' . $this->session->data['token'] . '&type=module', true);
+        $data['cancel'] = $this->url->link('extension/module', 'token=' . $this->session->data['token'], 'SSL');;
 
         if (isset($this->request->post['myskladoc21_username'])) {
             $data['myskladoc21_username'] = $this->request->post['myskladoc21_username'];
