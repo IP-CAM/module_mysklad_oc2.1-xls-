@@ -250,38 +250,30 @@ class ModelToolmyskladoc21 extends Model {
     }
 
     //из id категорий формируем путь типа родительская категория/подкатегория/категория  нужного товара
+    /*
     public function category($category_id){
 
+        $name = array();
         $query = $this->db->query("SELECT " . DB_PREFIX . "category.parent_id, " . DB_PREFIX . "category_description.name FROM `" . DB_PREFIX . "category`
                                       INNER JOIN `" . DB_PREFIX . "category_description` ON
                                         " . DB_PREFIX . "category.category_id = " . DB_PREFIX . "category_description.category_id
-                                        WHERE " . DB_PREFIX . "category.category_id =  ".$category_id."
+                                        WHERE " . DB_PREFIX . "category.category_id =  '".$category_id."'
             
                                     ");
-        while ($query->num_rows == true)
-        {
-            $this->category($query->row['parent_id']);
-            echo $query->row['name'].'/';
+
+        foreach ($query as $row){
+           $this->category($row['parent_id']);
+            $name = $row['name'].'/';
         }
 
-        if($query->num_rows == true){
-            $this->category(0);
-        }
+        return $name;
 
 
     }
+    */
 
-
-    /*Формируем xls прайс со всем товаром для скачивания*/
-    function downloadxls()
-    {
-        $cwd = getcwd();
-        chdir( DIR_SYSTEM.'myskladoc21_xls' );
-        // Подключаем класс для работы с excel
-        require_once('PHPExcel/PHPExcel.php');
-        // Подключаем класс для вывода данных в формате excel
-        require_once('PHPExcel/PHPExcel/Writer/Excel5.php');
-        chdir( $cwd );
+    //Выбираем данные для  xls  отчета
+    public function dataxls(){
 
         $query = $this->db->query("SELECT " . DB_PREFIX . "product.product_id, " . DB_PREFIX . "product.quantity, " . DB_PREFIX . "product.price, uuid.uuid_id,
                                     " . DB_PREFIX . "product_description.name, " . DB_PREFIX . "product_to_category.category_id  FROM `" . DB_PREFIX . "product`
@@ -290,81 +282,18 @@ class ModelToolmyskladoc21 extends Model {
                                    INNER JOIN `" . DB_PREFIX . "product_to_category`  ON " . DB_PREFIX . "product.product_id = " . DB_PREFIX . "product_to_category.product_id
                                     ");
 
-        // Создаем объект класса PHPExcel
-        $xls = new PHPExcel();
-        //Открываем файл-шаблон
-        $objReader = PHPExcel_IOFactory::createReader('Excel5');
-        $xls = $objReader->load(DIR_SYSTEM.'myskladoc21_xls/PHPExcel/goods.xls');
-        // Устанавливаем индекс активного листа
-        $xls->setActiveSheetIndex(0);
-        // Получаем активный лист
-        $sheet = $xls->getActiveSheet();
-        // Подписываем лист
-        $sheet->setTitle('Экспорт товара');
-
-        if($query->num_rows){
-
-            $i = 0;
-            /*Создаем цыкл до последнего ид товара и заполняем данными xls*/
-            foreach ($query->rows as $product){
-
-                $index = 1+(++$i);
-
-                // (Категории)
-                $sheet->setCellValue('A' . $index, $this->category($product['category_id']));
-                $sheet->getStyle('A' . $index)->getFill()->setFillType(
-                    PHPExcel_Style_Border::BORDER_THIN);
-                $sheet->getStyle('A' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
-
-                // (id_Product)
-                $sheet->setCellValue('B' . $index, $product['product_id']);
-                $sheet->getStyle('B' . $index)->getFill()->setFillType(
-                    PHPExcel_Style_Border::BORDER_THIN);
-                $sheet->getStyle('B' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
-
-                // (Наименование)
-                $sheet->setCellValue('C' . $index, $product['name']);
-                $sheet->getStyle('C' . $index)->getFill()->setFillType(
-                    PHPExcel_Style_Border::BORDER_THIN);
-                $sheet->getStyle('C' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
-
-                // (Внешний код)
-                $sheet->setCellValue('D' . $index, $this->get_uuid($product['product_id']));
-                $sheet->getStyle('D' . $index)->getFill()->setFillType(
-                    PHPExcel_Style_Border::BORDER_THIN);
-                $sheet->getStyle('D' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
-
-                // (Цена продажи)
-                $sheet->setCellValue('G' .$index, $product['price']);
-                $sheet->getStyle('G' . $index)->getFill()->setFillType(
-                    PHPExcel_Style_Border::BORDER_THIN);
-                $sheet->getStyle('G' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
-
-
-                // (Количество)
-                $sheet->setCellValue('T' . $index, $product['quantity']);
-                $sheet->getStyle('T' . $index)->getFill()->setFillType(
-                    PHPExcel_Style_Border::BORDER_THIN);
-                $sheet->getStyle('T' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
-            }
-        }
-
-
-        /*Сохраняем данные в файл (путь/файл) и скачиваем*/
-        $objWriter = new PHPExcel_Writer_Excel5($xls);
-        $data = date("d.m.Y");
-        $objWriter->save(DIR_SYSTEM.'myskladoc21_xls/otchet/export.xls');
-
-        /*переименовываем файл по дате для скачивания*/
-        $new_name = rename(DIR_SYSTEM.'myskladoc21_xls/otchet/export.xls', DIR_SYSTEM."myskladoc21_xls/otchet/export($data).xls");
-
-        /*передаем с помощью GET запроса на скрипт для скачивания отчета*/
-        if($new_name == true){
-            echo "model/tool/downoload_script_otchet/downoload.php?file=".DIR_SYSTEM."myskladoc21_xls/otchet/export($data).xls";
-        }
-
+        return $query->rows;
 
     }
 
+    public function getCat($category_id) {
+        $query = $this->db->query("SELECT " . DB_PREFIX . "category.category_id, " . DB_PREFIX . "category.parent_id, " . DB_PREFIX . "category_description.name FROM `" . DB_PREFIX . "category`
+                                      INNER JOIN `" . DB_PREFIX . "category_description` ON
+                                        " . DB_PREFIX . "category.category_id = " . DB_PREFIX . "category_description.category_id
+                                        WHERE " . DB_PREFIX . "category.category_id =  '".$category_id."'
+            
+                                    ");
+        return $query->rows;
+    }
 
 }

@@ -4,6 +4,7 @@ error_reporting(E_ALL ^E_NOTICE);
 
 class Controllermodulemyskladoc21 extends Controller {
     private $error = array();
+    public $mas;
 
     public function index() {
 
@@ -208,8 +209,7 @@ class Controllermodulemyskladoc21 extends Controller {
     public function download(){
 
         if(isset($this->request->post['xls'])){
-            $this->load->model('tool/myskladoc21');
-            $data['link_xls'] = $this->model_tool_myskladoc21->downloadxls();
+            $data['link_xls'] = $this->downloadxls();
 
         }
     }
@@ -321,6 +321,118 @@ public function modeOrdersChangeStatus(){
             echo "success\n";
         else
             echo "fail\n";
+    }
+
+    public function cat($category_id){
+        $this->load->model('tool/myskladoc21');
+
+        $results = $this->model_tool_myskladoc21->getCat($category_id);
+
+            $this->mas = array();
+            foreach ($results as $result){
+                if($result['parent_id'] != 0){
+                    $this->cat($result['parent_id']);
+                }
+                $this->mas[$result['parent_id']] = $result['name'];
+
+            }
+
+        return $this->mas;
+
+    }
+
+    /*Формируем xls прайс со всем товаром для скачивания*/
+    function downloadxls()
+    {
+        $this->load->model('tool/myskladoc21');
+
+        $cwd = getcwd();
+        chdir( DIR_SYSTEM.'myskladoc21_xls' );
+        // Подключаем класс для работы с excel
+        require_once('PHPExcel/PHPExcel.php');
+        // Подключаем класс для вывода данных в формате excel
+        require_once('PHPExcel/PHPExcel/Writer/Excel5.php');
+        chdir( $cwd );
+
+
+
+        // Создаем объект класса PHPExcel
+        $xls = new PHPExcel();
+        //Открываем файл-шаблон
+        $objReader = PHPExcel_IOFactory::createReader('Excel5');
+        $xls = $objReader->load(DIR_SYSTEM.'myskladoc21_xls/PHPExcel/goods.xls');
+        // Устанавливаем индекс активного листа
+        $xls->setActiveSheetIndex(0);
+        // Получаем активный лист
+        $sheet = $xls->getActiveSheet();
+        // Подписываем лист
+        $sheet->setTitle('Экспорт товара');
+
+        $products = $this->model_tool_myskladoc21->dataxls();
+
+            $i = 0;
+            /*Создаем цыкл до последнего ид товара и заполняем данными xls*/
+            foreach($products as $product){
+
+                $index = 1+(++$i);
+
+                // (Категории)
+
+                $sheet->setCellValue('A' . $index, implode('/',$this->cat($product['category_id'])));
+               // $sheet->setCellValue('A' . $index, var_dump($this->cat($product['category_id'])));
+                $sheet->getStyle('A' . $index)->getFill()->setFillType(
+                    PHPExcel_Style_Border::BORDER_THIN);
+                $sheet->getStyle('A' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
+
+
+                // (id_Product)
+                $sheet->setCellValue('B' . $index, $product['product_id']);
+                $sheet->getStyle('B' . $index)->getFill()->setFillType(
+                    PHPExcel_Style_Border::BORDER_THIN);
+                $sheet->getStyle('B' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
+
+                // (Наименование)
+                $sheet->setCellValue('C' . $index, $product['name']);
+                $sheet->getStyle('C' . $index)->getFill()->setFillType(
+                    PHPExcel_Style_Border::BORDER_THIN);
+                $sheet->getStyle('C' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
+
+                // (Внешний код)
+                $sheet->setCellValue('D' . $index, $this->model_tool_myskladoc21->get_uuid($product['product_id']));
+                $sheet->getStyle('D' . $index)->getFill()->setFillType(
+                    PHPExcel_Style_Border::BORDER_THIN);
+                $sheet->getStyle('D' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
+
+                // (Цена продажи)
+                $sheet->setCellValue('G' .$index, $product['price']);
+                $sheet->getStyle('G' . $index)->getFill()->setFillType(
+                    PHPExcel_Style_Border::BORDER_THIN);
+                $sheet->getStyle('G' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
+
+
+                // (Количество)
+                $sheet->setCellValue('T' . $index, $product['quantity']);
+                $sheet->getStyle('T' . $index)->getFill()->setFillType(
+                    PHPExcel_Style_Border::BORDER_THIN);
+                $sheet->getStyle('T' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
+            }
+
+
+
+        /*Сохраняем данные в файл (путь/файл) и скачиваем*/
+        $objWriter = new PHPExcel_Writer_Excel5($xls);
+        $data = date("d.m.Y");
+        $objWriter->save(DIR_SYSTEM.'myskladoc21_xls/otchet/export.xls');
+
+        /*переименовываем файл по дате для скачивания*/
+        $new_name = rename(DIR_SYSTEM.'myskladoc21_xls/otchet/export.xls', DIR_SYSTEM."myskladoc21_xls/otchet/export($data).xls");
+
+        /*передаем с помощью GET запроса на скрипт для скачивания отчета*/
+        if($new_name == true){
+            echo "model/tool/downoload_script_otchet/downoload.php?file=".DIR_SYSTEM."myskladoc21_xls/otchet/export($data).xls";
+        }
+
+
     }
 
 }
