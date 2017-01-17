@@ -55,6 +55,8 @@ $_['entry_order_currency']	= 'Orders currency:';
 
 $_['entry_upload']		= 'Select file:';
 $_['button_upload']		= 'Upload';
+$_['entry_download']		= 'Downoload xls file:';
+$_['button_downoload']		= 'Downoload';
 
 // Error
 $_['error_permission']		= 'Premission denied!';

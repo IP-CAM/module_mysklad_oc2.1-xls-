@@ -249,6 +249,25 @@ class ModelToolmyskladoc21 extends Model {
         return sprintf('%08s-%04s-%04x-%04x-%012s', $time_low, $time_mid, $time_hi_and_version, $clock_seq_hi_and_reserved, $node);
     }
 
+    //из id категорий формируем путь типа родительская категория/подкатегория/категория  нужного товара
+    public function category($category_id){
+
+        $query = $this->db->query("SELECT " . DB_PREFIX . "category.parent_id, " . DB_PREFIX . "category_description.name FROM `" . DB_PREFIX . "category`
+                                      INNER JOIN `" . DB_PREFIX . "category_description` ON
+                                        " . DB_PREFIX . "category.category_id = " . DB_PREFIX . "category_description.category_id
+                                        WHERE " . DB_PREFIX . "category.category_id =  '".$category_id."'
+            
+                                    ");
+
+        foreach ($query as $row){
+            $this->category($row['parent_id']);
+            echo $row['name'].'/';
+        }
+
+
+    }
+
+
     /*Формируем xls прайс со всем товаром для скачивания*/
     function downloadxls()
     {
@@ -260,9 +279,11 @@ class ModelToolmyskladoc21 extends Model {
         require_once('PHPExcel/PHPExcel/Writer/Excel5.php');
         chdir( $cwd );
 
-        $query = $this->db->query("SELECT oc2_product.product_id, oc2_product.quantity, oc2_product.price,
-                                  oc2_product_description.name,  oc2_product_description.description   FROM `" . DB_PREFIX . "product` INNER JOIN 
-                                     `" . DB_PREFIX . "product_description` ON oc2_product.product_id = oc2_product_description.product_id 
+        $query = $this->db->query("SELECT " . DB_PREFIX . "product.product_id, " . DB_PREFIX . "product.quantity, " . DB_PREFIX . "product.price, uuid.uuid_id,
+                                    " . DB_PREFIX . "product_description.name, " . DB_PREFIX . "product_to_category.category_id  FROM `" . DB_PREFIX . "product`
+                                   INNER JOIN `" . DB_PREFIX . "product_description` ON " . DB_PREFIX . "product.product_id = " . DB_PREFIX . "product_description.product_id 
+                                   LEFT JOIN `uuid` ON " . DB_PREFIX . "product.product_id = uuid.product_id
+                                   INNER JOIN `" . DB_PREFIX . "product_to_category`  ON " . DB_PREFIX . "product.product_id = " . DB_PREFIX . "product_to_category.product_id
                                     ");
 
         // Создаем объект класса PHPExcel
@@ -285,6 +306,12 @@ class ModelToolmyskladoc21 extends Model {
 
                 $index = 1+(++$i);
 
+                // (Категории)
+                $sheet->setCellValue('A' . $index, $this->category($product['category_id']));
+                $sheet->getStyle('A' . $index)->getFill()->setFillType(
+                    PHPExcel_Style_Border::BORDER_THIN);
+                $sheet->getStyle('A' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
+
                 // (id_Product)
                 $sheet->setCellValue('B' . $index, $product['product_id']);
                 $sheet->getStyle('B' . $index)->getFill()->setFillType(
@@ -297,19 +324,20 @@ class ModelToolmyskladoc21 extends Model {
                     PHPExcel_Style_Border::BORDER_THIN);
                 $sheet->getStyle('C' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
 
+                // (Внешний код)
+                $sheet->setCellValue('D' . $index, $this->get_uuid($product['product_id']));
+                $sheet->getStyle('D' . $index)->getFill()->setFillType(
+                    PHPExcel_Style_Border::BORDER_THIN);
+                $sheet->getStyle('D' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
+
                 // (Цена продажи)
                 $sheet->setCellValue('G' .$index, $product['price']);
                 $sheet->getStyle('G' . $index)->getFill()->setFillType(
                     PHPExcel_Style_Border::BORDER_THIN);
                 $sheet->getStyle('G' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
 
-                // (Описание)
-                $sheet->setCellValue('O' . $index, $product['description']);
-                $sheet->getStyle('O' . $index)->getFill()->setFillType(
-                    PHPExcel_Style_Border::BORDER_THIN);
-                $sheet->getStyle('O' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
 
-                // (Описание)
+                // (Количество)
                 $sheet->setCellValue('T' . $index, $product['quantity']);
                 $sheet->getStyle('T' . $index)->getFill()->setFillType(
                     PHPExcel_Style_Border::BORDER_THIN);

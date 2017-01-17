@@ -55,11 +55,14 @@ class Controllermodulemyskladoc21 extends Controller {
         $data['entry_order_currency'] = $this->language->get('entry_order_currency');
         $data['entry_upload'] = $this->language->get('entry_upload');
         $data['button_upload'] = $this->language->get('button_upload');
+        $data['entry_download'] = $this->language->get('entry_download');
+        $data['button_download'] = $this->language->get('button_download');
 
         $data['button_save'] = $this->language->get('button_save');
         $data['button_cancel'] = $this->language->get('button_cancel');
         $data['button_insert'] = $this->language->get('button_insert');
         $data['button_remove'] = $this->language->get('button_remove');
+
 
         if (isset($this->error['warning'])) {
             $data['error_warning'] = $this->error['warning'];
@@ -200,6 +203,15 @@ class Controllermodulemyskladoc21 extends Controller {
         $this->response->setOutput($this->load->view('module/myskladoc21.tpl', $data));
 
         //$this->response->setOutput($this->render(), $this->config->get('config_compression'));
+    }
+
+    public function download(){
+
+        if(isset($this->request->post['xls'])){
+            $this->load->model('tool/myskladoc21');
+            $data['link_xls'] = $this->model_tool_myskladoc21->downloadxls();
+
+        }
     }
 
     private function validate() {

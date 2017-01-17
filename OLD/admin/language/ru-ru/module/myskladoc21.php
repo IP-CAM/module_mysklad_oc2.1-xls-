@@ -57,6 +57,9 @@ $_['entry_upload']		= 'Выберите файл:';
 $_['button_upload']		= 'Загрузить';
 $_['button_insert']		= 'Добавить';
 
+$_['entry_download']		= 'Скачать xls файл:';
+$_['button_downoload']		= 'Скачать';
+
 
 
 // Error
