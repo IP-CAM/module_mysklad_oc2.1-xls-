@@ -273,13 +273,14 @@ class ModelToolmyskladoc21 extends Model {
     */
 
     //Выбираем данные для  xls  отчета
-    public function dataxls(){
+    public function dataxls($diapason){
 
         $query = $this->db->query("SELECT " . DB_PREFIX . "product.product_id, " . DB_PREFIX . "product.quantity, " . DB_PREFIX . "product.price, uuid.uuid_id,
                                     " . DB_PREFIX . "product_description.name, " . DB_PREFIX . "product_to_category.category_id  FROM `" . DB_PREFIX . "product`
                                    INNER JOIN `" . DB_PREFIX . "product_description` ON " . DB_PREFIX . "product.product_id = " . DB_PREFIX . "product_description.product_id 
                                    LEFT JOIN `uuid` ON " . DB_PREFIX . "product.product_id = uuid.product_id
                                    INNER JOIN `" . DB_PREFIX . "product_to_category`  ON " . DB_PREFIX . "product.product_id = " . DB_PREFIX . "product_to_category.product_id
+                                   GROUP BY " . DB_PREFIX . "product.product_id  LIMIT ".$diapason['ot'].", ".$diapason['kolichestvo']." 
                                     ");
 
         return $query->rows;

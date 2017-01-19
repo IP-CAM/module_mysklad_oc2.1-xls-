@@ -79,9 +79,18 @@ $token = $_GET['token'];
               <tr>
                 <td>
                   <?php echo $entry_download; ?>
+                  <div class="diapason">
+                    <input type="text" name="ot" class="ot" value="0"> -
+                    <input type="text" name="do" class="kolichestvo" value="1000">
+                  </div>
                 </td>
                 <td>
                   <a id="button-downoload" class="button"><?php echo $button_download; ?></a>
+                  <div class="diapason_text">
+                    <p>
+                      <?=$diapason_text;?>
+                    </p>
+                  </div>
                 </td>
 
               </tr>
@@ -132,19 +141,29 @@ $token = $_GET['token'];
 <script type="text/javascript">
   $(document).ready(function(){
     $('#button-downoload').click(function(){
-      $.ajax({
-        url : 'index.php?route=module/myskladoc21/download&token=<?php echo $token;?>',
-        type : 'post',
-        dataType:'text',
-        data :{
-          xls : 1
-        },
-        success:function(data){
-          location.href = data;
+      var ot_diapason = $('.ot').val();
+      var kolichestvo_diapason = $('.kolichestvo').val();
 
-        },
+       if (kolichestvo_diapason > 1001){
+        alert ("Error");
+      }else{
+        $.ajax({
+          url : 'index.php?route=module/myskladoc21/download&token=<?php echo $token;?>',
+          type : 'post',
+          dataType:'text',
+          data :{
+            ot: ot_diapason,
+            kolichestvo: kolichestvo_diapason
+          },
+          success:function(data){
+            location.href = data;
 
-      });
+          },
+
+        });
+      }
+
+
     });
 
   });

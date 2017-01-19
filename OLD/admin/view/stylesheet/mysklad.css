@@ -104,8 +104,16 @@
     background-color: #EFEFEF;
     padding: 0px 5px;
   }
-  input[type="checkbox" i] {
-    margin: 3px 3px 3px 4px;
+  input[type="checkbox"] {
+   -webkit-margin: 3px 3px 3px 4px;
     -webkit-appearance: checkbox;
     box-sizing: border-box;
   }
+ input.ot,input.kolichestvo {
+   width: 50px;
+ }
+ .diapason_text {
+   width: 85%;
+   float: right;
+ }
+

@@ -5,6 +5,7 @@ error_reporting(E_ALL ^E_NOTICE);
 class Controllermodulemyskladoc21 extends Controller {
     private $error = array();
     public $mas;
+    public $diapason;
 
     public function index() {
 
@@ -58,6 +59,8 @@ class Controllermodulemyskladoc21 extends Controller {
         $data['button_upload'] = $this->language->get('button_upload');
         $data['entry_download'] = $this->language->get('entry_download');
         $data['button_download'] = $this->language->get('button_download');
+        $data['diapason_text'] = $this->language->get('diapason_text');
+
 
         $data['button_save'] = $this->language->get('button_save');
         $data['button_cancel'] = $this->language->get('button_cancel');
@@ -208,7 +211,15 @@ class Controllermodulemyskladoc21 extends Controller {
 
     public function download(){
 
-        if(isset($this->request->post['xls'])){
+        if(isset($this->request->post['ot']) && isset($this->request->post['kolichestvo']) && $this->request->post['kolichestvo'] <= 1000){
+            $ot = $this->request->post['ot'];
+            $kolichestvo = $this->request->post['kolichestvo'];
+
+            $this->diapason = array(
+                'ot' => $ot,
+                'kolichestvo' => $kolichestvo
+            );
+
             $data['link_xls'] = $this->downloadxls();
 
         }
@@ -368,7 +379,7 @@ public function modeOrdersChangeStatus(){
         // Подписываем лист
         $sheet->setTitle('Экспорт товара');
 
-        $products = $this->model_tool_myskladoc21->dataxls();
+        $products = $this->model_tool_myskladoc21->dataxls($this->diapason);
 
             $i = 0;
             /*Создаем цыкл до последнего ид товара и заполняем данными xls*/
