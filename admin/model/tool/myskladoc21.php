@@ -249,29 +249,6 @@ class ModelToolmyskladoc21 extends Model {
         return sprintf('%08s-%04s-%04x-%04x-%012s', $time_low, $time_mid, $time_hi_and_version, $clock_seq_hi_and_reserved, $node);
     }
 
-    //из id категорий формируем путь типа родительская категория/подкатегория/категория  нужного товара
-    /*
-    public function category($category_id){
-
-        $name = array();
-        $query = $this->db->query("SELECT " . DB_PREFIX . "category.parent_id, " . DB_PREFIX . "category_description.name FROM `" . DB_PREFIX . "category`
-                                      INNER JOIN `" . DB_PREFIX . "category_description` ON
-                                        " . DB_PREFIX . "category.category_id = " . DB_PREFIX . "category_description.category_id
-                                        WHERE " . DB_PREFIX . "category.category_id =  '".$category_id."'
-            
-                                    ");
-
-        foreach ($query as $row){
-           $this->category($row['parent_id']);
-            $name = $row['name'].'/';
-        }
-
-        return $name;
-
-
-    }
-    */
-
     //Выбираем данные для  xls  отчета
     public function dataxls($diapason){
 
@@ -297,5 +274,64 @@ class ModelToolmyskladoc21 extends Model {
                                     ");
         return $query->rows;
     }
+
+    //выводи все ид продуктов, что есть в базе
+    public function getAllProductID(){
+        $query = $this->db->query("SELECT product_id  FROM `" . DB_PREFIX . "product` ");
+
+       return $query->rows;
+
+    }
+
+
+    #TODO нужно отдебажить запросы ну и на всякий случай спросить за условия так ли (а так вроде все по ТЗ)
+    //c полученого массива заносим данные в БД
+    public function getxls($mas_xls,$getAllProductID){
+
+        //защита от пустых записей
+        if (!empty(isset($mas_xls,$getAllProductID))){
+
+            for($index = 0; $index<count($mas_xls); $index++){
+                if($mas_xls[$index]['id'] == $getAllProductID[$index]['id']){
+                    $query1 = $this->db->query("UPDATE " . DB_PREFIX . "product 
+                                               INNER JOIN `" . DB_PREFIX . "product_description` ON " . DB_PREFIX . "product.product_id = " . DB_PREFIX . "product_description.product_id
+                                               SET name = '".$mas_xls[$index]['name']."', quantity = '".(int)$mas_xls[$index]['quantity']."', price = '".$mas_xls[$index]['price']."'
+                                               WHERE " . DB_PREFIX . "product_description.product_id = '" . (int)$mas_xls[$index]['id'] . "'");
+
+                    var_dump($query1);
+
+                }elseif($mas_xls[$index]['id'] != $getAllProductID[$index]['id']){
+
+                    $query2 = $this->db->query("INSERT INTO " . DB_PREFIX . "product
+                                                INNER JOIN " . DB_PREFIX . "product_description  ON " . DB_PREFIX . "product.product_id = " . DB_PREFIX . "product_description.product_id
+                                                SET name = '".$mas_xls[$index]['name']."', quantity = '".(int)$mas_xls[$index]['quantity']."', price = '".$mas_xls[$index]['price']."'");
+
+
+
+                   // return $query2;
+
+                    var_dump($query2);
+                }
+
+            }
+
+        }elseif(empty(!isset($getAllProductID))){
+            for($index = 0; $index<count($mas_xls); $index++) {
+                $query2 = $this->db->query("INSERT INTO " . DB_PREFIX . "product
+                                                INNER JOIN " . DB_PREFIX . "product_description  ON " . DB_PREFIX . "product.product_id = " . DB_PREFIX . "product_description.product_id
+                                                SET name = '" . $mas_xls['name'] . "', quantity = '" .(int)$mas_xls['quantity'] . "', price = '" . $mas_xls['price'] . "'");
+
+            }
+
+           // return $query2;
+            return 3;
+
+        }else{
+            return false;
+        }
+
+    }
+
+
 
 }
