@@ -31,7 +31,6 @@ class Controllermodulemyskladoc21 extends Controller {
         $data['entry_username'] = $this->language->get('entry_username');
         $data['entry_password'] = $this->language->get('entry_password');
 
-
         $data['entry_customer_group'] = $this->language->get('entry_customer_group');
         $data['entry_quantity'] = $this->language->get('entry_quantity');
         $data['entry_priority'] = $this->language->get('entry_priority');
@@ -453,6 +452,10 @@ public function modeOrdersChangeStatus(){
     public function importxls (){
         $this->load->model('tool/myskladoc21');
 
+        //получаем id  текущего языка и заносим в базу что бы товар отображался
+        $data['lang'] = $this->language->get('code');
+        $lang = $this->model_tool_myskladoc21->getLanguageId($data['lang']);
+
         $cwd = getcwd();
         chdir( DIR_SYSTEM.'myskladoc21_xls' );
         // Подключаем класс для работы с excel
@@ -485,8 +488,9 @@ public function modeOrdersChangeStatus(){
 
                 //что бы данные не были пустыми и не были 0 (считываем цыфры а не строки стоит (int)
                 //  специально что бы устранить строку $column_B_Value)
-                if (!empty(isset($column_D_Value))){
-                    $this->mas_xls[] = array(
+
+                 if (!empty($column_D_Value) && isset($column_D_Value)){
+                    $this->mas_xls[$column_B_Value] = array(
                         'id' => $column_B_Value,
                         'name' => $column_D_Value,
                         'quantity' => $column_I_Value,
@@ -501,22 +505,27 @@ public function modeOrdersChangeStatus(){
 
             $index = 0;
 
+            //создаем одномерный массив для поиска по нему
             foreach ($getID as $row){
-                $this->getAllProductID[] = array(
-                    'id' => $row['product_id']
-                );
-             $index++;
+
+                foreach ($row as $key=>$value){
+
+                    $this->getAllProductID[$value] = $value;
+                }
+                $index++;
             }
 
-            $import = $this->model_tool_myskladoc21->getxls($this->mas_xls,$this->getAllProductID);
+           $import = $this->model_tool_myskladoc21->getxls($this->mas_xls,$this->getAllProductID,$lang);
 
-         }
-
-
-
-
+            #TODO не инсертит новые товары без ид почему то Итоги инсертит нужно разобраться или посмотреть старый файл в old он инсертил без разбора
          var_dump($import);
 
+        }
+
+
+
     }
+
+
 }
 ?>

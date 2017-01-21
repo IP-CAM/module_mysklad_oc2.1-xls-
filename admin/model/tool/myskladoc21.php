@@ -191,20 +191,7 @@ class ModelToolmyskladoc21 extends Model {
     }
 
 
-    /**
-     * Получает language_id из code (ru, en, etc)
-     * Как ни странно, подходящей функции в API не нашлось
-     *
-     * @param	string
-     * @return	int
-     */
-    public function getLanguageId($lang) {
-        $query = $this->db->query('SELECT `language_id` FROM `' . DB_PREFIX . 'language` WHERE `code` = "'.$lang.'"');
-        return $query->row['language_id'];
-    }
-
-
-    // заносим в базу uuid  для каждого купленого товара (Может в будушем когданибудь  понадобится для API)
+   // заносим в базу uuid  для каждого купленого товара (Может в будушем когданибудь  понадобится для API)
     public function product_uuid($product_id)
     {
         $uuid = $this->uuid();
@@ -249,6 +236,14 @@ class ModelToolmyskladoc21 extends Model {
         return sprintf('%08s-%04s-%04x-%04x-%012s', $time_low, $time_mid, $time_hi_and_version, $clock_seq_hi_and_reserved, $node);
     }
 
+
+    //получаем id  языка
+    public function getLanguageId($lang) {
+        $query = $this->db->query('SELECT `language_id` FROM `' . DB_PREFIX . 'language` WHERE `code` = "'.$lang.'"');
+        return $query->row['language_id'];
+    }
+
+
     //Выбираем данные для  xls  отчета
     public function dataxls($diapason){
 
@@ -284,47 +279,57 @@ class ModelToolmyskladoc21 extends Model {
     }
 
 
-    #TODO нужно отдебажить запросы ну и на всякий случай спросить за условия так ли (а так вроде все по ТЗ)
+
     //c полученого массива заносим данные в БД
-    public function getxls($mas_xls,$getAllProductID){
-
+    public function getxls($mas_xls,$getAllProductID,$lang){
+        $today = date("Y-m-d");
+        $index = 0;
         //защита от пустых записей
-        if (!empty(isset($mas_xls,$getAllProductID))){
+      //  if (!empty($getAllProductID) && isset($mas_xls) && isset($getAllProductID)){
+        if (!empty($getAllProductID) && isset($mas_xls) && isset($getAllProductID)){
+            foreach($mas_xls as $xls){
+                //поиск по массиву если совпало то апдейтем
+                $result = array_search($xls['id'], $getAllProductID);
 
-            for($index = 0; $index<count($mas_xls); $index++){
-                if($mas_xls[$index]['id'] == $getAllProductID[$index]['id']){
-                    $query1 = $this->db->query("UPDATE " . DB_PREFIX . "product 
+               // $res_insert = array_diff((array)$mas_xls[$xls['id']]['id'], $getAllProductID);
+                 if(!empty($result) && isset($result)){
+                   $this->db->query("UPDATE " . DB_PREFIX . "product 
                                                INNER JOIN `" . DB_PREFIX . "product_description` ON " . DB_PREFIX . "product.product_id = " . DB_PREFIX . "product_description.product_id
-                                               SET name = '".$mas_xls[$index]['name']."', quantity = '".(int)$mas_xls[$index]['quantity']."', price = '".$mas_xls[$index]['price']."'
-                                               WHERE " . DB_PREFIX . "product_description.product_id = '" . (int)$mas_xls[$index]['id'] . "'");
+                                               SET name = '".$xls['name']."', quantity = '".(int)$xls['quantity']."', price = '".$xls['price']."'
+                                               WHERE " . DB_PREFIX . "product_description.product_id = '" . (int)$result . "'");
 
-                    var_dump($query1);
+                     var_dump($result);
+                 }elseif($xls['name'] != "Итого:"){
 
-                }elseif($mas_xls[$index]['id'] != $getAllProductID[$index]['id']){
+                     $this->db->query("INSERT INTO " . DB_PREFIX . "product (`model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`,
+                                      `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`,
+                                       `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `date_added`, `date_modified`) VALUES
+                                       ('','','','','','','','', '".(int)$xls['quantity']."',0,'',0,0,'".$xls['price']."',0,0,'".$today."', 0,0,0.0,0,0,0,0,0,0,0,0,
+                                       '".$today."','".$today."')");
 
-                    $query2 = $this->db->query("INSERT INTO " . DB_PREFIX . "product
-                                                INNER JOIN " . DB_PREFIX . "product_description  ON " . DB_PREFIX . "product.product_id = " . DB_PREFIX . "product_description.product_id
-                                                SET name = '".$mas_xls[$index]['name']."', quantity = '".(int)$mas_xls[$index]['quantity']."', price = '".$mas_xls[$index]['price']."'");
 
+                    //получаем продукт ид для добавление того же товара(описание товара)
+                    $product_id = $this->db->getLastId();
 
+                     var_dump(222);
 
-                   // return $query2;
+                    $this->db->query("INSERT INTO " . DB_PREFIX . "product_description (`product_id`, `language_id`, `name`, `description`,
+                                    `tag`, `meta_title`, `meta_description`, `meta_keyword`) VALUES ($product_id,$lang,'".$xls['name']."',' ','',' ','','')");
 
-                    var_dump($query2);
+                     $index++;
+
+                    $this->db->query("INSERT INTO  " . DB_PREFIX . "product_to_store (`product_id`, `store_id`) VALUES ($product_id,0)");
+
                 }
+               // var_dump($xls['id']);
+                $index++;
 
+
+                //return $xls['name'];
             }
 
-        }elseif(empty(!isset($getAllProductID))){
-            for($index = 0; $index<count($mas_xls); $index++) {
-                $query2 = $this->db->query("INSERT INTO " . DB_PREFIX . "product
-                                                INNER JOIN " . DB_PREFIX . "product_description  ON " . DB_PREFIX . "product.product_id = " . DB_PREFIX . "product_description.product_id
-                                                SET name = '" . $mas_xls['name'] . "', quantity = '" .(int)$mas_xls['quantity'] . "', price = '" . $mas_xls['price'] . "'");
+           //return $product_id;
 
-            }
-
-           // return $query2;
-            return 3;
 
         }else{
             return false;

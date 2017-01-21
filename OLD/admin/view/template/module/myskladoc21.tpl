@@ -8,6 +8,8 @@ $token = $_GET['token'];
 <link href="view/stylesheet/mysklad.css" rel="stylesheet">
 
 <script type="text/javascript" src="view/javascript/jquery/tabs.js"></script>
+<script type="text/javascript" src="view/javascript/jquery/ajaxupload.3.5.js"></script>
+
 <div id="content" style="margin-left:50px;">
   <div class="page-header">
     <div class="container-fluid">
@@ -74,6 +76,10 @@ $token = $_GET['token'];
                 </td>
                 <td>
                   <a id="button-upload" class="button"><?php echo $button_upload; ?></a>
+                  <div class="message">
+                    <span id="status" ></span>
+                    <ul id="files" ></ul>
+                  </div>
                 </td>
               </tr>
               <tr>
@@ -164,6 +170,51 @@ $token = $_GET['token'];
       }
 
 
+    });
+
+    //import var good;  importxls ()
+
+  });
+
+  $(function(){
+    var btnUpload=$('#button-upload');
+    var status=$('#status');
+    new AjaxUpload(btnUpload, {
+
+      action: 'controller/module/upload-file.php',
+      name: 'uploadfile',
+      onSubmit: function(file, ext){
+        if (! (ext && /^(xls|xlsx)$/.test(ext))){
+          // extension is not allowed
+          status.text('Поддерживаемые форматы xls, xlsx');
+          return false;
+        }
+        status.text('Загрузка...');
+      },
+      onComplete: function(file, response){
+        //On completion clear the status
+        status.text('');
+        //Add uploaded file to list
+         if(response==="success"){
+          $('<li></li>').appendTo('#files').html('<img src="view/image/ok.png" alt="" /><br />'+file).addClass('success');
+           $.ajax({
+             url : 'index.php?route=module/myskladoc21/importxls&token=<?php echo $token;?>',
+             type : 'post',
+             dataType:'text',
+             data :{
+               good: "good",
+
+             },
+             success:function(data){
+              console.log(data);
+
+             },
+
+           });
+        } else{
+          $('<li></li>').appendTo('#files').text('Файл не загружен' + file).addClass('error');
+        }
+      }
     });
 
   });

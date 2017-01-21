@@ -6,6 +6,9 @@ class Controllermodulemyskladoc21 extends Controller {
     private $error = array();
     public $mas;
     public $diapason;
+    public $getAllProductID;
+    public $mas_xls;
+
 
     public function index() {
 
@@ -27,7 +30,6 @@ class Controllermodulemyskladoc21 extends Controller {
         $data['heading_title'] = $this->language->get('heading_title');
         $data['entry_username'] = $this->language->get('entry_username');
         $data['entry_password'] = $this->language->get('entry_password');
-
 
         $data['entry_customer_group'] = $this->language->get('entry_customer_group');
         $data['entry_quantity'] = $this->language->get('entry_quantity');
@@ -445,6 +447,84 @@ public function modeOrdersChangeStatus(){
 
 
     }
+
+    //import  данных с xls  в базу
+    public function importxls (){
+        $this->load->model('tool/myskladoc21');
+
+        //получаем id  текущего языка и заносим в базу что бы товар отображался
+        $data['lang'] = $this->language->get('code');
+        $lang = $this->model_tool_myskladoc21->getLanguageId($data['lang']);
+
+        $cwd = getcwd();
+        chdir( DIR_SYSTEM.'myskladoc21_xls' );
+        // Подключаем класс для работы с excel
+        require_once('PHPExcel/PHPExcel.php');
+        // Подключаем класс для вывода данных в формате excel
+        require_once('PHPExcel/PHPExcel/Writer/Excel5.php');
+        chdir( $cwd );
+
+        if(isset($this->request->post['good'])){
+
+            //путь где хранится xls файл для import
+            $xlsData = 'controller/module/uploads/import.xls';
+            $objPHPExcel = PHPExcel_IOFactory::load($xlsData);
+            $objWorksheet = $objPHPExcel->getActiveSheet();
+            $this->mas_xls = array();
+            $this->getAllProductID = array();
+            $getID = $this->model_tool_myskladoc21->getAllProductID();
+            $i =10; // с какой строки начинаем считывать данные
+
+            foreach ($objWorksheet->getRowIterator() as $row) {
+
+                //столбец с $i строки
+                $column_B_Value = (int)$objPHPExcel->getActiveSheet()->getCell("B$i")->getValue();//column Код
+                //you can add your own columns B, C, D etc.
+                $column_D_Value = $objPHPExcel->getActiveSheet()->getCell("D$i")->getValue();//column Наименование
+
+                $column_I_Value = $objPHPExcel->getActiveSheet()->getCell("I$i")->getValue();//column Остаток
+
+                $column_L_Value = $objPHPExcel->getActiveSheet()->getCell("L$i")->getValue();//column Цена продажи
+
+                //что бы данные не были пустыми и не были 0 (считываем цыфры а не строки стоит (int)
+                //  специально что бы устранить строку $column_B_Value)
+
+                 if (!empty($column_D_Value) && isset($column_D_Value)){
+                    $this->mas_xls[] = array(
+                        'id' => $column_B_Value,
+                        'name' => $column_D_Value,
+                        'quantity' => $column_I_Value,
+                        'price' => $column_L_Value,
+                    );
+
+                }
+                //inset $column_A_Value value in DB query here
+                $i++;
+
+            }
+
+            $index = 0;
+
+            //создаем одномерный массив для поиска по нему
+            foreach ($getID as $row){
+
+                foreach ($row as $key=>$value){
+
+                    $this->getAllProductID[$value] = $value;
+                }
+                $index++;
+            }
+
+           $import = $this->model_tool_myskladoc21->getxls($this->mas_xls,$this->getAllProductID,$lang);
+
+         var_dump($import);
+
+        }
+
+
+
+    }
+
 
 }
 ?>

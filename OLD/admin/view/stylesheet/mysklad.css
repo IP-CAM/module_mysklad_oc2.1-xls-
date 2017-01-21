@@ -13,7 +13,7 @@
     border-top: 1px solid #DDDDDD;
     border-left: 1px solid #DDDDDD;
     border-right: 1px solid #DDDDDD;
-    background: #DBDBDB url(view/image/tab.png) repeat-x;
+    background: #DBDBDB url(../image/tab.png) repeat-x;
     padding: 7px 15px 6px 15px;
     float: left;
     font-family: Arial, Helvetica, sans-serif;
@@ -115,5 +115,17 @@
  .diapason_text {
    width: 85%;
    float: right;
+ }
+ .message {
+   float: right;
+   position: relative;
+   width: 85%;
+   height: 30px;
+ }
+ ul#files {
+   height: 30px;
+   /* bottom: 27px; */
+   position: absolute;
+   width: 100%;
  }
 
