@@ -281,60 +281,68 @@ class ModelToolmyskladoc21 extends Model {
 
 
     //c полученого массива заносим данные в БД
-    public function getxls($mas_xls,$getAllProductID,$lang){
+    public function getxls($mas_xls,$getAllProductID,$lang)
+    {
+
         $today = date("Y-m-d");
         $index = 0;
-        //защита от пустых записей
-        if (!empty($mas_xls) && !empty($getAllProductID) && isset($mas_xls) && isset($getAllProductID)){
+        $res = array();
 
-            foreach($mas_xls as $xls){
+        foreach ($mas_xls as $xls) {
+         //   $result = array_search($xls['id'], $getAllProductID);
+            $res[$xls['id']] = $xls['id'];
+        }
+        $no_base = array_diff($res, $getAllProductID);
+
+        var_dump(key($no_base));
+
+
+        //защита от пустых записей
+        //  if (!empty($getAllProductID) && isset($mas_xls) && isset($getAllProductID)){
+        if (!empty($getAllProductID) && isset($mas_xls) && isset($getAllProductID)) {
+
+            foreach ($mas_xls as $xls) {
                 //поиск по массиву если совпало то апдейтем
                 $result = array_search($xls['id'], $getAllProductID);
 
-                $res_insert = array_diff($xls['id'], $getAllProductID);
-                 if(!empty($result) && isset($result)){
-                   $this->db->query("UPDATE " . DB_PREFIX . "product 
+                if (!empty($result) && isset($result)) {
+                    $this->db->query("UPDATE " . DB_PREFIX . "product 
                                                INNER JOIN `" . DB_PREFIX . "product_description` ON " . DB_PREFIX . "product.product_id = " . DB_PREFIX . "product_description.product_id
-                                               SET name = '".$xls['name']."', quantity = '".(int)$xls['quantity']."', price = '".$xls['price']."'
+                                               SET name = '" . $xls['name'] . "', quantity = '" . (int)$xls['quantity'] . "', price = '" . $xls['price'] . "'
                                                WHERE " . DB_PREFIX . "product_description.product_id = '" . (int)$result . "'");
 
+                }elseif(isset($no_base) && !empty($no_base)){
 
-                }elseif(!empty($res_insert) && isset($res_insert)){
-
-                     $this->db->query("INSERT INTO " . DB_PREFIX . "product (`model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`,
+                    $this->db->query("INSERT INTO " . DB_PREFIX . "product (`model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`,
                                       `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`,
                                        `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `date_added`, `date_modified`) VALUES
                                        ('','','','','','','','', '".(int)$xls['quantity']."',0,'',0,0,'".$xls['price']."',0,0,'".$today."', 0,0,0.0,0,0,0,0,0,0,0,0,
                                        '".$today."','".$today."')");
 
 
-                    //получаем продукт ид для добавление того же товара(описание товара)
-                    $product_id = $this->db->getLastId();
+                        //получаем продукт ид для добавление того же товара(описание товара)
+                        $product_id = $this->db->getLastId();
 
-                    $this->db->query("INSERT INTO " . DB_PREFIX . "product_description (`product_id`, `language_id`, `name`, `description`,
-                                    `tag`, `meta_title`, `meta_description`, `meta_keyword`) VALUES ($product_id,$lang,'".$mas_xls[$index]['name']."',' ','',' ','','')");
+                        $this->db->query("INSERT INTO " . DB_PREFIX . "product_description (`product_id`, `language_id`, `name`, `description`,
+                                    `tag`, `meta_title`, `meta_description`, `meta_keyword`) VALUES ($product_id,$lang,'".$xls['name']."',' ','',' ','','')");
 
 
+                        $this->db->query("INSERT INTO  " . DB_PREFIX . "product_to_store (`product_id`, `store_id`) VALUES ($product_id,0)");
 
-                    $this->db->query("INSERT INTO  " . DB_PREFIX . "product_to_store (`product_id`, `store_id`) VALUES ($product_id,0)");
 
                 }
-               // var_dump($xls['id']);
                 $index++;
 
-
-                //return $xls['name'];
             }
 
-           //return $product_id;
+          }else{
+            $in = 0;
+            foreach ($mas_xls as $xls) {
 
-
-        }elseif(empty(!isset($getAllProductID))){
-            for($index = 0; $index<count($mas_xls); $index++) {
                 $this->db->query("INSERT INTO " . DB_PREFIX . "product (`model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`,
                                       `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`,
                                        `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `date_added`, `date_modified`) VALUES
-                                       ('','','','','','','','', '".(int)$mas_xls[$index]['quantity']."',0,'',0,0,'".$mas_xls[$index]['price']."',0,0,'".$today."', 0,0,0.0,0,0,0,0,0,0,0,0,
+                                       ('','','','','','','','', '".(int)$xls['quantity']."',0,'',0,0,'".$xls['price']."',0,0,'".$today."', 0,0,0.0,0,0,0,0,0,0,0,0,
                                        '".$today."','".$today."')");
 
 
@@ -342,26 +350,17 @@ class ModelToolmyskladoc21 extends Model {
                 $product_id = $this->db->getLastId();
 
                 $this->db->query("INSERT INTO " . DB_PREFIX . "product_description (`product_id`, `language_id`, `name`, `description`,
-                                    `tag`, `meta_title`, `meta_description`, `meta_keyword`) VALUES ($product_id,$lang,'".$mas_xls[$index]['name']."',' ','',' ','','')");
+                                    `tag`, `meta_title`, `meta_description`, `meta_keyword`) VALUES ($product_id,$lang,'".$xls['name']."',' ','',' ','','')");
 
 
                 $this->db->query("INSERT INTO  " . DB_PREFIX . "product_to_store (`product_id`, `store_id`) VALUES ($product_id,0)");
+            $in++;
 
             }
 
-           // return $query2;
-           // return $product_id;
+
+            }
 
         }
-
-
-
-        else{
-            return false;
-        }
-
-    }
-
-
 
 }

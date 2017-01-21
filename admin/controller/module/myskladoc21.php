@@ -2,7 +2,8 @@
 ini_set('display_errors',1);
 error_reporting(E_ALL ^E_NOTICE);
 
-class Controllermodulemyskladoc21 extends Controller {
+class Controllermodulemyskladoc21 extends Controller
+{
     private $error = array();
     public $mas;
     public $diapason;
@@ -10,7 +11,8 @@ class Controllermodulemyskladoc21 extends Controller {
     public $mas_xls;
 
 
-    public function index() {
+    public function index()
+    {
 
         $this->load->language('module/myskladoc21');
         $this->load->model('tool/image');
@@ -72,8 +74,7 @@ class Controllermodulemyskladoc21 extends Controller {
 
         if (isset($this->error['warning'])) {
             $data['error_warning'] = $this->error['warning'];
-        }
-        else {
+        } else {
             $data['error_warning'] = '';
         }
 
@@ -85,15 +86,13 @@ class Controllermodulemyskladoc21 extends Controller {
 
         if (isset($this->error['myskladoc21_username'])) {
             $data['error_myskladoc21_username'] = $this->error['myskladoc21_username'];
-        }
-        else {
+        } else {
             $data['error_myskladoc21_username'] = '';
         }
 
         if (isset($this->error['myskladoc21_password'])) {
             $data['error_myskladoc21_password'] = $this->error['myskladoc21_password'];
-        }
-        else {
+        } else {
             $data['error_myskladoc21_password'] = '';
         }
 
@@ -117,43 +116,38 @@ class Controllermodulemyskladoc21 extends Controller {
 
         if (isset($this->request->post['myskladoc21_username'])) {
             $data['myskladoc21_username'] = $this->request->post['myskladoc21_username'];
-        }
-        else {
+        } else {
             $data['myskladoc21_username'] = $this->config->get('myskladoc21_username');
         }
 
         if (isset($this->request->post['myskladoc21_password'])) {
             $data['myskladoc21_password'] = $this->request->post['myskladoc21_password'];
-        }
-        else {
+        } else {
             $data['myskladoc21_password'] = $this->config->get('myskladoc21_password');
         }
 
         if (isset($this->request->post['myskladoc21_allow_ip'])) {
             $data['myskladoc21_allow_ip'] = $this->request->post['myskladoc21_allow_ip'];
-        }
-        else {
+        } else {
             $data['myskladoc21_allow_ip'] = $this->config->get('myskladoc21_allow_ip');
         }
 
         if (isset($this->request->post['myskladoc21_status'])) {
             $data['myskladoc21_status'] = $this->request->post['myskladoc21_status'];
-        }
-        else {
+        } else {
             $data['myskladoc21_status'] = $this->config->get('myskladoc21_status');
         }
 
         if (isset($this->request->post['myskladoc21_price_type'])) {
             $data['myskladoc21_price_type'] = $this->request->post['myskladoc21_price_type'];
-        }
-        else {
+        } else {
             $data['myskladoc21_price_type'] = $this->config->get('myskladoc21_price_type');
-            if(empty($data['myskladoc21_price_type'])) {
+            if (empty($data['myskladoc21_price_type'])) {
                 $data['myskladoc21_price_type'][] = array(
-                    'keyword'           => '',
-                    'customer_group_id'     => 0,
-                    'quantity'          => 0,
-                    'priority'          => 0
+                    'keyword' => '',
+                    'customer_group_id' => 0,
+                    'quantity' => 0,
+                    'priority' => 0
                 );
             }
         }
@@ -168,15 +162,13 @@ class Controllermodulemyskladoc21 extends Controller {
 
         if (isset($this->request->post['myskladoc21_order_status'])) {
             $data['myskladoc21_order_status'] = $this->request->post['myskladoc21_order_status'];
-        }
-        else {
+        } else {
             $data['myskladoc21_order_status'] = $this->config->get('myskladoc21_order_status');
         }
 
         if (isset($this->request->post['myskladoc21_order_currency'])) {
             $data['myskladoc21_order_currency'] = $this->request->post['myskladoc21_order_currency'];
-        }
-        else {
+        } else {
             $data['myskladoc21_order_currency'] = $this->config->get('myskladoc21_order_currency');
         }
 
@@ -192,14 +184,14 @@ class Controllermodulemyskladoc21 extends Controller {
         foreach ($order_statuses as $order_status) {
             $data['order_statuses'][] = array(
                 'order_status_id' => $order_status['order_status_id'],
-                'name'            => $order_status['name']
+                'name' => $order_status['name']
             );
         }
 
         $this->template = 'module/myskladoc21.tpl';
         $this->children = array(
             'common/header',
-            'common/footer' 
+            'common/footer'
         );
 
         $data['heading_title'] = $this->language->get('heading_title');
@@ -211,9 +203,10 @@ class Controllermodulemyskladoc21 extends Controller {
         //$this->response->setOutput($this->render(), $this->config->get('config_compression'));
     }
 
-    public function download(){
+    public function download()
+    {
 
-        if(isset($this->request->post['ot']) && isset($this->request->post['kolichestvo']) && $this->request->post['kolichestvo'] <= 1000){
+        if (isset($this->request->post['ot']) && isset($this->request->post['kolichestvo']) && $this->request->post['kolichestvo'] <= 1000) {
             $ot = $this->request->post['ot'];
             $kolichestvo = $this->request->post['kolichestvo'];
 
@@ -227,7 +220,8 @@ class Controllermodulemyskladoc21 extends Controller {
         }
     }
 
-    private function validate() {
+    private function validate()
+    {
 
         if (!$this->user->hasPermission('modify', 'module/myskladoc21')) {
             $this->error['warning'] = $this->language->get('error_permission');
@@ -237,12 +231,17 @@ class Controllermodulemyskladoc21 extends Controller {
 
     }
 
-    public function install() {}
+    public function install()
+    {
+    }
 
-    public function uninstall() {}
+    public function uninstall()
+    {
+    }
 
     // ---
-    public function modeCheckauth() {
+    public function modeCheckauth()
+    {
 
         // Проверяем включен или нет модуль
         if (!$this->config->get('myskladoc21_status')) {
@@ -269,16 +268,17 @@ class Controllermodulemyskladoc21 extends Controller {
         echo md5($this->config->get('myskladoc21_password')) . "\n";
     }
 
-    public function modeSaleInit() {
+    public function modeSaleInit()
+    {
         $limit = 100000 * 1024;
 
         echo "zip=no\n";
-        echo "file_limit=".$limit."\n";
+        echo "file_limit=" . $limit . "\n";
     }
 
 
-
-    public function modeQueryOrders() {
+    public function modeQueryOrders()
+    {
         if (!isset($this->request->cookie['key'])) {
             echo "Cookie fail\n";
             return;
@@ -293,17 +293,18 @@ class Controllermodulemyskladoc21 extends Controller {
         $this->load->model('tool/myskladoc21');
 
         $orders = $this->model_tool_myskladoc21->queryOrders(array(
-            'from_date'     => $this->config->get('myskladoc21_order_date')
-        ,'exchange_status'  => $this->config->get('myskladoc21_order_status_to_exchange')
-        ,'new_status'   => $this->config->get('myskladoc21_order_status')
-        ,'currency'     => $this->config->get('myskladoc21_order_currency') ? $this->config->get('myskladoc21_order_currency') : 'руб.'
+            'from_date' => $this->config->get('myskladoc21_order_date')
+        , 'exchange_status' => $this->config->get('myskladoc21_order_status_to_exchange')
+        , 'new_status' => $this->config->get('myskladoc21_order_status')
+        , 'currency' => $this->config->get('myskladoc21_order_currency') ? $this->config->get('myskladoc21_order_currency') : 'руб.'
         ));
-        
- 
+
+
         echo iconv('utf-8', 'cp1251', $orders);
     }
 
-public function modeOrdersChangeStatus(){
+    public function modeOrdersChangeStatus()
+    {
         if (!isset($this->request->cookie['key'])) {
             echo "Cookie fail\n";
             return;
@@ -318,37 +319,38 @@ public function modeOrdersChangeStatus(){
         $this->load->model('tool/myskladoc21');
 
         $result = $this->model_tool_myskladoc21->queryOrdersStatus(array(
-            'from_date'         => $this->config->get('myskladoc21_order_date'),
-            'exchange_status'   => $this->config->get('myskladoc21_order_status_to_exchange'),
-            'new_status'        => $this->config->get('myskladoc21_order_status'),
+            'from_date' => $this->config->get('myskladoc21_order_date'),
+            'exchange_status' => $this->config->get('myskladoc21_order_status_to_exchange'),
+            'new_status' => $this->config->get('myskladoc21_order_status'),
         ));
 
-        if($result){
+        if ($result) {
             $this->load->model('setting/setting');
             $config = $this->model_setting_setting->getSetting('myskladoc21');
             $config['myskladoc21_order_date'] = date('Y-m-d H:i:s');
             $this->model_setting_setting->editSetting('myskladoc21', $config);
         }
 
-        if($result)
+        if ($result)
             echo "success\n";
         else
             echo "fail\n";
     }
 
-    public function cat($category_id){
+    public function cat($category_id)
+    {
         $this->load->model('tool/myskladoc21');
 
         $results = $this->model_tool_myskladoc21->getCat($category_id);
 
-            $this->mas = array();
-            foreach ($results as $result){
-                if($result['parent_id'] != 0){
-                    $this->cat($result['parent_id']);
-                }
-                $this->mas[$result['parent_id']] = $result['name'];
-
+        $this->mas = array();
+        foreach ($results as $result) {
+            if ($result['parent_id'] != 0) {
+                $this->cat($result['parent_id']);
             }
+            $this->mas[$result['parent_id']] = $result['name'];
+
+        }
 
         return $this->mas;
 
@@ -360,20 +362,19 @@ public function modeOrdersChangeStatus(){
         $this->load->model('tool/myskladoc21');
 
         $cwd = getcwd();
-        chdir( DIR_SYSTEM.'myskladoc21_xls' );
+        chdir(DIR_SYSTEM . 'myskladoc21_xls');
         // Подключаем класс для работы с excel
         require_once('PHPExcel/PHPExcel.php');
         // Подключаем класс для вывода данных в формате excel
         require_once('PHPExcel/PHPExcel/Writer/Excel5.php');
-        chdir( $cwd );
-
+        chdir($cwd);
 
 
         // Создаем объект класса PHPExcel
         $xls = new PHPExcel();
         //Открываем файл-шаблон
         $objReader = PHPExcel_IOFactory::createReader('Excel5');
-        $xls = $objReader->load(DIR_SYSTEM.'myskladoc21_xls/PHPExcel/goods.xls');
+        $xls = $objReader->load(DIR_SYSTEM . 'myskladoc21_xls/PHPExcel/goods.xls');
         // Устанавливаем индекс активного листа
         $xls->setActiveSheetIndex(0);
         // Получаем активный лист
@@ -383,73 +384,73 @@ public function modeOrdersChangeStatus(){
 
         $products = $this->model_tool_myskladoc21->dataxls($this->diapason);
 
-            $i = 0;
-            /*Создаем цыкл до последнего ид товара и заполняем данными xls*/
-            foreach($products as $product){
+        $i = 0;
+        /*Создаем цыкл до последнего ид товара и заполняем данными xls*/
+        foreach ($products as $product) {
 
-                $index = 1+(++$i);
+            $index = 1 + (++$i);
 
-                // (Категории)
+            // (Категории)
 
-                $sheet->setCellValue('A' . $index, implode('/',$this->cat($product['category_id'])));
-               // $sheet->setCellValue('A' . $index, var_dump($this->cat($product['category_id'])));
-                $sheet->getStyle('A' . $index)->getFill()->setFillType(
-                    PHPExcel_Style_Border::BORDER_THIN);
-                $sheet->getStyle('A' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
-
-
-                // (id_Product)
-                $sheet->setCellValue('B' . $index, $product['product_id']);
-                $sheet->getStyle('B' . $index)->getFill()->setFillType(
-                    PHPExcel_Style_Border::BORDER_THIN);
-                $sheet->getStyle('B' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
-
-                // (Наименование)
-                $sheet->setCellValue('C' . $index, $product['name']);
-                $sheet->getStyle('C' . $index)->getFill()->setFillType(
-                    PHPExcel_Style_Border::BORDER_THIN);
-                $sheet->getStyle('C' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
-
-                // (Внешний код)
-                $sheet->setCellValue('D' . $index, $this->model_tool_myskladoc21->get_uuid($product['product_id']));
-                $sheet->getStyle('D' . $index)->getFill()->setFillType(
-                    PHPExcel_Style_Border::BORDER_THIN);
-                $sheet->getStyle('D' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
-
-                // (Цена продажи)
-                $sheet->setCellValue('G' .$index, $product['price']);
-                $sheet->getStyle('G' . $index)->getFill()->setFillType(
-                    PHPExcel_Style_Border::BORDER_THIN);
-                $sheet->getStyle('G' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
+            $sheet->setCellValue('A' . $index, implode('/', $this->cat($product['category_id'])));
+            // $sheet->setCellValue('A' . $index, var_dump($this->cat($product['category_id'])));
+            $sheet->getStyle('A' . $index)->getFill()->setFillType(
+                PHPExcel_Style_Border::BORDER_THIN);
+            $sheet->getStyle('A' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
 
 
-                // (Количество)
-                $sheet->setCellValue('T' . $index, $product['quantity']);
-                $sheet->getStyle('T' . $index)->getFill()->setFillType(
-                    PHPExcel_Style_Border::BORDER_THIN);
-                $sheet->getStyle('T' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
-            }
+            // (id_Product)
+            $sheet->setCellValue('B' . $index, $product['product_id']);
+            $sheet->getStyle('B' . $index)->getFill()->setFillType(
+                PHPExcel_Style_Border::BORDER_THIN);
+            $sheet->getStyle('B' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
 
+            // (Наименование)
+            $sheet->setCellValue('C' . $index, $product['name']);
+            $sheet->getStyle('C' . $index)->getFill()->setFillType(
+                PHPExcel_Style_Border::BORDER_THIN);
+            $sheet->getStyle('C' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
+
+            // (Внешний код)
+            $sheet->setCellValue('D' . $index, $this->model_tool_myskladoc21->get_uuid($product['product_id']));
+            $sheet->getStyle('D' . $index)->getFill()->setFillType(
+                PHPExcel_Style_Border::BORDER_THIN);
+            $sheet->getStyle('D' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
+
+            // (Цена продажи)
+            $sheet->setCellValue('G' . $index, $product['price']);
+            $sheet->getStyle('G' . $index)->getFill()->setFillType(
+                PHPExcel_Style_Border::BORDER_THIN);
+            $sheet->getStyle('G' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
+
+
+            // (Количество)
+            $sheet->setCellValue('T' . $index, $product['quantity']);
+            $sheet->getStyle('T' . $index)->getFill()->setFillType(
+                PHPExcel_Style_Border::BORDER_THIN);
+            $sheet->getStyle('T' . $index)->getFill()->getStartColor()->setRGB('EEEEEE');
+        }
 
 
         /*Сохраняем данные в файл (путь/файл) и скачиваем*/
         $objWriter = new PHPExcel_Writer_Excel5($xls);
         $data = date("d.m.Y");
-        $objWriter->save(DIR_SYSTEM.'myskladoc21_xls/otchet/export.xls');
+        $objWriter->save(DIR_SYSTEM . 'myskladoc21_xls/otchet/export.xls');
 
         /*переименовываем файл по дате для скачивания*/
-        $new_name = rename(DIR_SYSTEM.'myskladoc21_xls/otchet/export.xls', DIR_SYSTEM."myskladoc21_xls/otchet/export($data).xls");
+        $new_name = rename(DIR_SYSTEM . 'myskladoc21_xls/otchet/export.xls', DIR_SYSTEM . "myskladoc21_xls/otchet/export($data).xls");
 
         /*передаем с помощью GET запроса на скрипт для скачивания отчета*/
-        if($new_name == true){
-            echo "model/tool/downoload_script_otchet/downoload.php?file=".DIR_SYSTEM."myskladoc21_xls/otchet/export($data).xls";
+        if ($new_name == true) {
+            echo "model/tool/downoload_script_otchet/downoload.php?file=" . DIR_SYSTEM . "myskladoc21_xls/otchet/export($data).xls";
         }
 
 
     }
 
     //import  данных с xls  в базу
-    public function importxls (){
+    public function importxls()
+    {
         $this->load->model('tool/myskladoc21');
 
         //получаем id  текущего языка и заносим в базу что бы товар отображался
@@ -457,14 +458,14 @@ public function modeOrdersChangeStatus(){
         $lang = $this->model_tool_myskladoc21->getLanguageId($data['lang']);
 
         $cwd = getcwd();
-        chdir( DIR_SYSTEM.'myskladoc21_xls' );
+        chdir(DIR_SYSTEM . 'myskladoc21_xls');
         // Подключаем класс для работы с excel
         require_once('PHPExcel/PHPExcel.php');
         // Подключаем класс для вывода данных в формате excel
         require_once('PHPExcel/PHPExcel/Writer/Excel5.php');
-        chdir( $cwd );
+        chdir($cwd);
 
-        if(isset($this->request->post['good'])){
+        if (isset($this->request->post['good'])) {
 
             //путь где хранится xls файл для import
             $xlsData = 'controller/module/uploads/import.xls';
@@ -473,23 +474,40 @@ public function modeOrdersChangeStatus(){
             $this->mas_xls = array();
             $this->getAllProductID = array();
             $getID = $this->model_tool_myskladoc21->getAllProductID();
-            $i =10; // с какой строки начинаем считывать данные
+            $i = 1; // с какой строки начинаем считывать данные
+            $clock = time(); //временный ключь для массива insert
+
+            $index = 1;
+
+            //создаем одномерный массив для поиска по нему
+            foreach ($getID as $row) {
+
+                foreach ($row as $key => $value) {
+
+                    $this->getAllProductID[$value] = $value;
+                }
+                $index++;
+            }
+            //максимальное значение ключа с базы
+            if(isset($this->getAllProductID) && !empty($this->getAllProductID)){
+                $max = array_keys($this->getAllProductID, max($this->getAllProductID));
+
+            }
+
 
             foreach ($objWorksheet->getRowIterator() as $row) {
-
                 //столбец с $i строки
                 $column_B_Value = (int)$objPHPExcel->getActiveSheet()->getCell("B$i")->getValue();//column Код
                 //you can add your own columns B, C, D etc.
                 $column_D_Value = $objPHPExcel->getActiveSheet()->getCell("D$i")->getValue();//column Наименование
 
                 $column_I_Value = $objPHPExcel->getActiveSheet()->getCell("I$i")->getValue();//column Остаток
-
                 $column_L_Value = $objPHPExcel->getActiveSheet()->getCell("L$i")->getValue();//column Цена продажи
-
                 //что бы данные не были пустыми и не были 0 (считываем цыфры а не строки стоит (int)
                 //  специально что бы устранить строку $column_B_Value)
-
-                 if (!empty($column_D_Value) && isset($column_D_Value)){
+                //функция на апдейт имя есть то создаем массив
+                if (!empty($column_D_Value) && isset($column_D_Value) && 
+                    isset($column_B_Value) && !empty($column_B_Value) && isset($column_I_Value) && $column_D_Value != "Наименование") {
                     $this->mas_xls[$column_B_Value] = array(
                         'id' => $column_B_Value,
                         'name' => $column_D_Value,
@@ -497,35 +515,34 @@ public function modeOrdersChangeStatus(){
                         'price' => $column_L_Value,
                     );
 
+                    //функция добавляет ключь для массива, что бы залить товар в базу если у товара id 0
+                } elseif (isset($max) &&!empty($max) && isset($column_I_Value) &&!empty($column_D_Value) && isset($column_D_Value) && $column_B_Value == 0 && $column_D_Value != "Итого:" && $column_D_Value != "Наименование") {
+                    $this->mas_xls[$max[0] + $i] = array(
+                        'id' => $max[0] + $i,
+                        'name' => $column_D_Value,
+                        'quantity' => $column_I_Value,
+                        'price' => $column_L_Value,
+                    );
+                    //inset $column_A_Value value in DB query here
+
+                //добавляем тайм++ временный ключь массива и заносим в базу товар
+                }elseif(!isset($max) &&!empty($column_D_Value)&& isset($column_I_Value) && isset($column_D_Value) && $column_B_Value == 0 && $column_D_Value != "Итого:" && $column_D_Value != "Наименование"){
+                    $this->mas_xls[++$clock] = array(
+                        'id' => 1,
+                        'name' => $column_D_Value,
+                        'quantity' => $column_I_Value,
+                        'price' => $column_L_Value,
+                    );
+
                 }
-                //inset $column_A_Value value in DB query here
+
                 $i++;
 
-            }
-
-            $index = 0;
-
-            //создаем одномерный массив для поиска по нему
-            foreach ($getID as $row){
-
-                foreach ($row as $key=>$value){
-
-                    $this->getAllProductID[$value] = $value;
-                }
-                $index++;
-            }
-
-           $import = $this->model_tool_myskladoc21->getxls($this->mas_xls,$this->getAllProductID,$lang);
-
-            #TODO не инсертит новые товары без ид почему то Итоги инсертит нужно разобраться или посмотреть старый файл в old он инсертил без разбора
-         var_dump($import);
+             }
+           $import = $this->model_tool_myskladoc21->getxls($this->mas_xls, $this->getAllProductID, $lang);
 
         }
 
-
-
     }
-
-
 }
 ?>
